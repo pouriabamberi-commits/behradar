@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>وبلاگ و مقالات آموزشی | استاد بهمن بهرادفر</title>
+    <meta name="description"
+        content="جدیدترین مقالات آموزشی زبان انگلیسی، گرامر، مکالمه، آیلتس و پادکست‌های استاد بهمن بهرادفر">
+
+    <!-- Open Graph Tags -->
+    <meta property="og:title" content="وبلاگ آکادمی زبان استاد بهمن بهرادفر">
+    <meta property="og:description" content="آموزش‌های تخصصی انگلیسی، گرامر، لغات و تکنیک‌های آیلتس">
+    <meta property="og:type" content="website">
+
+    <!-- Vazirmatn Font -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/vazirmatn@33.0.3/Vazirmatn-font-face.min.css">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Vazirmatn', 'sans-serif'],
+                    },
+                    colors: {
+                        primary: '#F6AE2D',
+                        'primary-hover': '#F59C28',
+                        accent: '#F48923',
+                        highlight: '#F3771E',
+                        'dark-accent': '#F26419',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- AOS CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+    <style>
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+</head>
+
+<body class="bg-slate-50 text-slate-800 font-sans antialiased min-h-screen flex flex-col justify-between">
+
+    <!-- Header -->
+    <header class="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-slate-100 shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <a href="#" class="flex items-center gap-3 group" title="صفحه اصلی استاد بهمن بهرادفر">
+                <div
+                    class="w-12 h-12 rounded-xl bg-gradient-to-tr from-dark-accent to-primary flex items-center justify-center text-white font-black text-xl shadow-md shadow-accent/20 group-hover:scale-105 transition-transform">
+                    BB
+                </div>
+                <div class="flex flex-col">
+                    <span class="font-bold text-lg text-slate-900 group-hover:text-dark-accent transition-colors">استاد
+                        بهمن بهرادفر</span>
+                    <span class="text-xs text-slate-500">آکادمی تخصصی آموزش زبان انگلیسی</span>
+                </div>
+            </a>
+
+            <nav class="hidden md:flex items-center gap-8 font-medium text-slate-600 text-sm">
+                <a href="#" class="hover:text-dark-accent transition-colors">صفحه اصلی</a>
+                <a href="#" class="hover:text-dark-accent transition-colors">درباره من</a>
+                <a href="#" class="hover:text-dark-accent transition-colors">تعیین سطح</a>
+                <a href="#" class="text-dark-accent font-bold border-b-2 border-dark-accent pb-1">وبلاگ</a>
+                <a href="#" class="hover:text-dark-accent transition-colors">دانلودها</a>
+            </nav>
+
+            <div>
+                <a href="#"
+                    class="inline-flex items-center justify-center px-5 py-2.5 rounded-xl bg-dark-accent hover:bg-highlight text-white text-sm font-semibold transition-all shadow-md shadow-dark-accent/20 hover:shadow-lg">
+                    ورود / ثبت‌نام
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="flex-grow py-8 sm:py-12 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-7xl mx-auto">
+
+            <!-- Hero Title -->
+            <div class="text-center mb-8" data-aos="fade-down">
+                <span
+                    class="inline-block px-4 py-1.5 rounded-full bg-primary/10 text-dark-accent text-xs font-bold mb-3">
+                    Blog & Articles
+                </span>
+                <h1 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mb-3">وبلاگ و مقالات آموزشی زبان انگلیسی
+                </h1>
+                <p class="text-slate-600 text-sm sm:text-base max-w-2xl mx-auto leading-relaxed">
+                    منبع جامع مقالات، پادکست‌ها و تکنیک‌های یادگیری سریع زبان با متد استاد بهمن بهرادفر
+                </p>
+            </div>
+
+            <!-- Search & Filter Section -->
+            <div class="max-w-4xl mx-auto mb-10 space-y-6" data-aos="fade-up">
+
+                <!-- Search Box -->
+                <div class="relative">
+                    <input type="text" id="searchInput" placeholder="جستجو در مقالات، گرامر، آیلتس..."
+                        class="w-full h-14 pr-12 pl-4 rounded-2xl bg-white border border-slate-200 focus:border-dark-accent focus:ring-4 focus:ring-primary/20 text-slate-800 text-sm transition-all shadow-sm">
+                    <div class="absolute right-4 top-1/2 -translate-y-1/2 text-slate-400">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                        </svg>
+                    </div>
+                </div>
+
+                <!-- 4 Main Category Buttons -->
+                <div class="flex items-center justify-start sm:justify-center gap-2 overflow-x-auto pb-2 no-scrollbar"
+                    id="categoryContainer">
+                    <button data-category="all"
+                        class="filter-btn active-btn px-5 py-2.5 rounded-xl text-xs sm:text-sm font-bold whitespace-nowrap transition-all bg-dark-accent text-white shadow-md shadow-dark-accent/20">
+                        همه مقالات
+                    </button>
+                    <button data-category="grammar"
+                        class="filter-btn px-5 py-2.5 rounded-xl text-xs sm:text-sm font-bold whitespace-nowrap transition-all bg-white text-slate-600 hover:bg-slate-100 border border-slate-200">
+                        بخش ۱: گرامر
+                    </button>
+                    <button data-category="speaking"
+                        class="filter-btn px-5 py-2.5 rounded-xl text-xs sm:text-sm font-bold whitespace-nowrap transition-all bg-white text-slate-600 hover:bg-slate-100 border border-slate-200">
+                        بخش ۲: مکالمه
+                    </button>
+                    <button data-category="ielts"
+                        class="filter-btn px-5 py-2.5 rounded-xl text-xs sm:text-sm font-bold whitespace-nowrap transition-all bg-white text-slate-600 hover:bg-slate-100 border border-slate-200">
+                        بخش ۳: آیلتس / تافل
+                    </button>
+                    <button data-category="podcast"
+                        class="filter-btn px-5 py-2.5 rounded-xl text-xs sm:text-sm font-bold whitespace-nowrap transition-all bg-white text-slate-600 hover:bg-slate-100 border border-slate-200">
+                        بخش ۴: پادکست و ویدیو
+                    </button>
+                </div>
+            </div>
+
+            <!-- Blog Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8" id="postsGrid">
+                <!-- مقالات با JS رندر می‌شوند -->
+            </div>
+
+            <!-- Empty State -->
+            <div id="emptyState"
+                class="hidden text-center py-16 bg-white rounded-3xl border border-slate-100 shadow-sm mt-6">
+                <p class="text-slate-500 font-medium text-base mb-2">هیچ مقاله‌ای با مشخصات جستجو پیدا نشد!</p>
+                <p class="text-slate-400 text-xs">لطفاً عبارت دیگری را جستجو کنید یا فیلتر دسته‌بندی را تغییر دهید.</p>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 text-slate-400 py-8 border-t border-slate-800 text-xs text-center">
+        <div class="max-w-7xl mx-auto px-4">
+            <p>کلیه حقوق مادی و معنوی این وب‌سایت متعلق به **استاد بهمن بهرادفر** می‌باشد.</p>
+        </div>
+    </footer>
+
+    <!-- JS Libraries -->
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+
+    <!-- Vanilla JavaScript -->
+    <script>
+        AOS.init({ duration: 800, once: true });
+
+        // داده‌های مقالات
+        const posts = [
+            {
+                id: 1,
+                title: '۱۰ تکنیک طلایی برای یادگیری سریع گرامر زبان انگلیسی',
+                summary: 'در این مقاله به بررسی ۱۰ روش کاملاً کاربردی برای تثبیت گرامرهای پیچیده زبان انگلیسی بدون حفظ کردن طوطی‌وار می‌پردازیم.',
+                category: 'grammar',
+                date: '۱۴۰۲/۱۱/۲۰',
+                readTime: '۵ دقیقه',
+                author: 'استاد بهرادفر',
+                image: 'https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=600&q=80'
+            },
+            {
+                id: 2,
+                title: 'چگونه بدون ترس به زبان انگلیسی مکالمه کنیم؟',
+                summary: 'غلبه بر استرس هنگام صحبت کردن یکی از بزرگترین چالش‌های زبان‌آموزان است. در این مطلب راهکارهای علمی روانی را مرور می‌کنیم.',
+                category: 'speaking',
+                date: '۱۴۰۲/۱۱/۱۸',
+                readTime: '۷ دقیقه',
+                author: 'استاد بهرادفر',
+                image: 'https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=600&q=80'
+            },
+            {
+                id: 3,
+                title: 'بررسی جامع بخش Speaking آزمون آیلتس + نمونه سوالات',
+                summary: 'تحلیل دقیق سوالات پارت ۱ تا ۳ آزمون شفاهی آیلتس به همراه استراتژی‌های نمره‌دهی ممتحن‌ها.',
+                category: 'ielts',
+                date: '۱۴۰۲/۱۱/۱۵',
+                readTime: '۱۰ دقیقه',
+                author: 'استاد بهرادفر',
+                image: 'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=600&q=80'
+            },
+            {
+                id: 4,
+                title: 'پادکست شماره ۱۲: تقویت مهارت شنیداری با اخبارهای روز',
+                summary: 'در این فایل صوتی به همراه متندوزبانه، اصطلاحات کاربردی اخبار انگلیسی را با هم تمرین و تحلیل می‌کنیم.',
+                category: 'podcast',
+                date: '۱۴۰۲/۱۱/۱۰',
+                readTime: '۱۲ دقیقه فایل صوتی',
+                author: 'استاد بهرادفر',
+                image: 'https://images.unsplash.com/photo-1590602847861-f357a9332bbc?w=600&q=80'
+            },
+            {
+                id: 5,
+                title: 'تفاوت‌های کلیدی بین Past Simple و Present Perfect',
+                summary: 'یکی از پرخطاترین مباحث گرامری برای ایرانیان. تحلیل فرمول‌ها و مثال‌های ملموس روزمره.',
+                category: 'grammar',
+                date: '۱۴۰۲/۱۱/۰۵',
+                readTime: '۴ دقیقه',
+                author: 'استاد بهرادفر',
+                image: 'https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?w=600&q=80'
+            },
+            {
+                id: 6,
+                title: '۵۰ اصطلاح عامیانه و نیتیو (Native Idioms) در مکالمات',
+                summary: 'اگر می‌خواهید مانند یک نیتیو اسپیکر واقعی صحبت کنید، این ۵۰ اصطلاح ضروری را حتماً یاد بگیرید.',
+                category: 'speaking',
+                date: '۱۴۰۲/۱۰/۲۸',
+                readTime: '۸ دقیقه',
+                author: 'استاد بهرادفر',
+                image: 'https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=600&q=80'
+            }
+        ];
+
+        let currentCategory = 'all';
+        let searchQuery = '';
+
+        const categoryLabels = {
+            grammar: 'گرامر',
+            speaking: 'مکالمه',
+            ielts: 'آیلتس / تافل',
+            podcast: 'پادکست و ویدیو'
+        };
+
+        const postsGrid = document.getElementById('postsGrid');
+        const emptyState = document.getElementById('emptyState');
+        const searchInput = document.getElementById('searchInput');
+        const filterBtns = document.querySelectorAll('.filter-btn');
+
+        // تابع رندر کردن کارت‌های وبلاگ
+        function renderPosts() {
+            const filtered = posts.filter(post => {
+                const matchesCategory = currentCategory === 'all' || post.category === currentCategory;
+                const matchesSearch = post.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
+                    post.summary.toLowerCase().includes(searchQuery.toLowerCase());
+                return matchesCategory && matchesSearch;
+            });
+
+            postsGrid.innerHTML = '';
+
+            if (filtered.length === 0) {
+                emptyState.classList.remove('hidden');
+            } else {
+                emptyState.classList.add('hidden');
+                filtered.forEach(post => {
+                    const cardHtml = `
+                        <article 
+                            data-aos="fade-up"
+                            class="bg-white rounded-3xl overflow-hidden border border-slate-100 shadow-md hover:shadow-xl transition-all duration-300 flex flex-col group">
+                            
+                            <div class="relative h-48 sm:h-52 overflow-hidden bg-slate-100">
+                                <img src="${post.image}" alt="${post.title}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                                <span class="absolute top-4 right-4 px-3 py-1 bg-dark-accent text-white text-xs font-bold rounded-lg shadow-md">
+                                    ${categoryLabels[post.category] || 'عمومی'}
+                                </span>
+                            </div>
+
+                            <div class="p-6 flex flex-col flex-grow justify-between">
+                                <div>
+                                    <div class="flex items-center gap-3 text-xs text-slate-400 mb-3">
+                                        <span>${post.date}</span>
+                                        <span>•</span>
+                                        <span>${post.readTime} زمان مطالعه</span>
+                                    </div>
+                                    <h2 class="text-base sm:text-lg font-bold text-slate-900 group-hover:text-dark-accent transition-colors line-clamp-2 mb-2 leading-snug">${post.title}</h2>
+                                    <p class="text-slate-600 text-xs sm:text-sm line-clamp-3 leading-relaxed mb-4">${post.summary}</p>
+                                </div>
+
+                                <div class="pt-4 border-t border-slate-100 flex items-center justify-between">
+                                    <span class="text-xs font-semibold text-slate-500">نویسنده: ${post.author}</span>
+                                    <a href="#" class="inline-flex items-center gap-1 text-xs font-bold text-dark-accent hover:text-highlight transition-colors">
+                                        بیشتر بخوانید
+                                        <svg class="w-4 h-4 rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
+                                        </svg>
+                                    </a>
+                                </div>
+                            </div>
+                        </article>
+                    `;
+                    postsGrid.insertAdjacentHTML('beforeend', cardHtml);
+                });
+                AOS.refresh();
+            }
+        }
+
+        // رویداد لسنر باکس جستجو
+        searchInput.addEventListener('input', (e) => {
+            searchQuery = e.target.value;
+            renderPosts();
+        });
+
+        // رویداد لسنر دکمه‌های فیلتر دسته‌بندی
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                filterBtns.forEach(b => {
+                    b.classList.remove('bg-dark-accent', 'text-white', 'shadow-md', 'shadow-dark-accent/20');
+                    b.classList.add('bg-white', 'text-slate-600', 'border', 'border-slate-200');
+                });
+
+                btn.classList.remove('bg-white', 'text-slate-600', 'border', 'border-slate-200');
+                btn.classList.add('bg-dark-accent', 'text-white', 'shadow-md', 'shadow-dark-accent/20');
+
+                currentCategory = btn.getAttribute('data-category');
+                renderPosts();
+            });
+        });
+
+        // رندر اولیه هنگام بارگذاری
+        renderPosts();
+    </script>
+</body>
+
+</html>

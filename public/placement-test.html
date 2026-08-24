@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تعیین سطح آنلاین انگلیسی | استاد بهمن بهرادفر</title>
+    <meta name="description"
+        content="آزمون تعیین سطح هوشمند و چند مرحله‌ای زبان انگلیسی استاد بهمن بهرادفر از سطح A1 تا C2">
+
+    <!-- Open Graph Tags -->
+    <meta property="og:title" content="تعیین سطح آنلاین انگلیسی | استاد بهمن بهرادفر">
+    <meta property="og:description"
+        content="سنجش دقیق دانش زبانی در ۶ سطح استاندارد CEFR همراه با دریافت نتایج هوشمند.">
+    <meta property="og:type" content="website">
+
+    <!-- Vazirmatn Font -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/vazirmatn@33.0.3/Vazirmatn-font-face.min.css">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Vazirmatn', 'sans-serif'],
+                    },
+                    colors: {
+                        primary: '#F6AE2D',
+                        'primary-hover': '#F59C28',
+                        accent: '#F48923',
+                        highlight: '#F3771E',
+                        'dark-accent': '#F26419',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- AOS CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+    <!-- SweetAlert2 CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+
+    <!-- Alpine.js -->
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
+    <style>
+        [x-cloak] {
+            display: none !important;
+        }
+    </style>
+</head>
+
+<body class="bg-slate-50 text-slate-800 font-sans antialiased min-h-screen flex flex-col justify-between">
+
+    <!-- Header -->
+    <header class="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-slate-100 shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <a href="#" class="flex items-center gap-3 group" title="صفحه اصلی استاد بهمن بهرادفر">
+                <div
+                    class="w-12 h-12 rounded-xl bg-gradient-to-tr from-dark-accent to-primary flex items-center justify-center text-white font-black text-xl shadow-md shadow-accent/20 group-hover:scale-105 transition-transform">
+                    BB
+                </div>
+                <div class="flex flex-col">
+                    <span class="font-bold text-lg text-slate-900 group-hover:text-dark-accent transition-colors">استاد
+                        بهمن بهرادفر</span>
+                    <span class="text-xs text-slate-500">آکادمی تخصصی آموزش زبان انگلیسی</span>
+                </div>
+            </a>
+
+            <nav class="hidden md:flex items-center gap-8 font-medium text-slate-600 text-sm">
+                <a href="#" class="hover:text-dark-accent transition-colors">صفحه اصلی</a>
+                <a href="#" class="hover:text-dark-accent transition-colors">درباره من</a>
+                <a href="#" class="text-dark-accent font-bold border-b-2 border-dark-accent pb-1">تعیین سطح</a>
+                <a href="#" class="hover:text-dark-accent transition-colors">وبلاگ</a>
+                <a href="#" class="hover:text-dark-accent transition-colors">دانلودها</a>
+            </nav>
+
+            <div>
+                <a href="#"
+                    class="inline-flex items-center justify-center px-5 py-2.5 rounded-xl bg-dark-accent hover:bg-highlight text-white text-sm font-semibold transition-all shadow-md shadow-dark-accent/20 hover:shadow-lg">
+                    ورود / ثبت‌نام
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="flex-grow py-12 px-4 sm:px-6 lg:px-8" x-data="placementTest()" x-cloak>
+        <div class="max-w-4xl mx-auto">
+
+            <!-- Header Section -->
+            <div class="text-center mb-10" data-aos="fade-down">
+                <span
+                    class="inline-block px-4 py-1.5 rounded-full bg-primary/10 text-dark-accent text-xs font-bold mb-3">
+                    Placement Test
+                </span>
+                <h1 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mb-4">آزمون تعیین سطح آنلاین زبان انگلیسی
+                </h1>
+                <p class="text-slate-600 text-sm sm:text-base max-w-2xl mx-auto leading-relaxed">
+                    ابتدا سطح پایه‌ای که فکر می‌کنید در آن قرار دارید را انتخاب کنید. سپس به ۲۰ سوال تخصصی طراحی‌شده
+                    پاسخ دهید تا فرم برای ارزیابی نهایی ارسال شود.
+                </p>
+            </div>
+
+            <!-- Step 1: Level Selection -->
+            <div x-show="step === 1" data-aos="fade-up"
+                class="bg-white rounded-3xl p-6 sm:p-10 shadow-xl shadow-slate-200/60 border border-slate-100">
+                <h2 class="text-xl font-bold text-slate-900 mb-6 text-center">سطح مورد نظر خود را برای شروع انتخاب کنید:
+                </h2>
+
+                <div class="grid grid-cols-2 sm:grid-cols-3 gap-4 mb-8">
+                    <template x-for="lvl in levels" :key="lvl.id">
+                        <button type="button" @click="selectedLevel = lvl.id"
+                            :class="selectedLevel === lvl.id ? 'border-dark-accent bg-primary/10 text-dark-accent shadow-md scale-[1.02]' : 'border-slate-200 hover:border-primary hover:bg-slate-50 text-slate-700'"
+                            class="flex flex-col items-center justify-center p-5 rounded-2xl border-2 transition-all duration-200 group">
+                            <span class="text-2xl font-black mb-1" x-text="lvl.id"></span>
+                            <span class="text-xs font-medium text-slate-500 group-hover:text-slate-700"
+                                x-text="lvl.title"></span>
+                        </button>
+                    </template>
+                </div>
+
+                <div class="flex justify-center">
+                    <button type="button" @click="startTest()" :disabled="!selectedLevel"
+                        :class="!selectedLevel ? 'opacity-50 cursor-not-allowed bg-slate-300' : 'bg-dark-accent hover:bg-highlight text-white shadow-lg shadow-dark-accent/30 hover:scale-[1.02]'"
+                        class="px-8 py-3.5 rounded-xl font-bold text-base transition-all duration-200">
+                        شروع آزمون ۲۰ سوالی
+                    </button>
+                </div>
+            </div>
+
+            <!-- Step 2: Questions Form -->
+            <div x-show="step === 2" x-transition
+                class="bg-white rounded-3xl p-6 sm:p-10 shadow-xl shadow-slate-200/60 border border-slate-100">
+
+                <!-- Progress & Stats Header -->
+                <div class="flex flex-wrap items-center justify-between gap-4 pb-6 mb-8 border-b border-slate-100">
+                    <div class="flex items-center gap-2">
+                        <span class="text-xs font-bold px-3 py-1 bg-dark-accent text-white rounded-lg"
+                            x-text="'سطح انتخاب‌شده: ' + selectedLevel"></span>
+                    </div>
+                    <div class="text-sm font-bold text-slate-600">
+                        سوال <span class="text-dark-accent" x-text="currentQuestionIndex + 1"></span> از <span
+                            x-text="questions.length"></span>
+                    </div>
+                </div>
+
+                <!-- Progress Bar -->
+                <div class="w-full bg-slate-100 rounded-full h-2.5 mb-8 overflow-hidden">
+                    <div class="bg-gradient-to-r from-primary to-dark-accent h-2.5 rounded-full transition-all duration-300"
+                        :style="'width: ' + ((currentQuestionIndex + 1) / questions.length * 100) + '%'"></div>
+                </div>
+
+                <!-- Form -->
+                <form id="placementForm" @submit.prevent="submitTest">
+
+                    <!-- Question Item -->
+                    <template x-for="(q, index) in questions" :key="q.id">
+                        <div x-show="currentQuestionIndex === index" class="space-y-6">
+                            <h3 class="text-lg sm:text-xl font-bold text-slate-900 leading-snug dir-ltr text-right"
+                                x-text="(index + 1) + '. ' + q.question"></h3>
+
+                            <div class="space-y-3 pt-2">
+                                <template x-for="(option, optIdx) in q.options" :key="optIdx">
+                                    <label
+                                        :class="userAnswers[q.id] === optIdx ? 'border-dark-accent bg-primary/10 font-semibold' : 'border-slate-200 hover:bg-slate-50'"
+                                        class="flex items-center justify-between p-4 rounded-xl border-2 cursor-pointer transition-all duration-150">
+                                        <span class="text-sm sm:text-base text-slate-700 dir-ltr text-right"
+                                            x-text="option"></span>
+                                        <input type="radio" :name="'question_' + q.id" :value="optIdx"
+                                            x-model="userAnswers[q.id]"
+                                            class="w-4 h-4 text-dark-accent focus:ring-accent border-slate-300">
+                                    </label>
+                                </template>
+                            </div>
+                        </div>
+                    </template>
+
+                    <!-- Navigation Buttons -->
+                    <div class="flex items-center justify-between pt-8 mt-8 border-t border-slate-100">
+                        <button type="button" @click="prevQuestion()" x-show="currentQuestionIndex > 0"
+                            class="px-6 py-2.5 rounded-xl border border-slate-300 text-slate-700 font-semibold text-sm hover:bg-slate-50 transition-colors">
+                            سوال قبلی
+                        </button>
+                        <div x-show="currentQuestionIndex === 0"></div>
+
+                        <button type="button" @click="nextQuestion()"
+                            x-show="currentQuestionIndex < questions.length - 1"
+                            class="px-6 py-2.5 rounded-xl bg-dark-accent hover:bg-highlight text-white font-semibold text-sm transition-all shadow-md shadow-dark-accent/20">
+                            سوال بعدی
+                        </button>
+
+                        <button type="submit" x-show="currentQuestionIndex === questions.length - 1"
+                            class="px-8 py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-sm transition-all shadow-md shadow-emerald-600/20">
+                            ثبت و ارسال پاسخ‌ها
+                        </button>
+                    </div>
+                </form>
+
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 text-slate-400 py-8 border-t border-slate-800 text-xs text-center">
+        <div class="max-w-7xl mx-auto px-4">
+            <p>کلیه حقوق مادی و معنوی این وب‌سایت متعلق به **استاد بهمن بهرادفر** می‌باشد.</p>
+        </div>
+    </footer>
+
+    <!-- JS Libraries -->
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://unpkg.com/just-validate@latest/dist/just-validate.production.min.js"></script>
+
+    <!-- Page Logic -->
+    <script>
+        AOS.init({ duration: 800, once: true });
+
+        function placementTest() {
+            return {
+                step: 1,
+                selectedLevel: null,
+                currentQuestionIndex: 0,
+                userAnswers: {},
+                levels: [
+                    { id: 'A1', title: 'مبتدی (Elementary)' },
+                    { id: 'A2', title: 'پیش‌متوسط (Pre-Intermediate)' },
+                    { id: 'B1', title: 'متوسط (Intermediate)' },
+                    { id: 'B2', title: 'بالاتر از متوسط (Upper-Intermediate)' },
+                    { id: 'C1', title: 'پیشرفته (Advanced)' },
+                    { id: 'C2', title: 'تسلط کامل (Proficiency)' }
+                ],
+                questions: [],
+
+                startTest() {
+                    if (!this.selectedLevel) return;
+
+                    // تولید ۲۰ سوال نمونه بر اساس سطح انتخابی (در سیستم واقعی از API دریافت می‌شود)
+                    this.questions = Array.from({ length: 20 }, (_, i) => ({
+                        id: i + 1,
+                        question: `[Level ${this.selectedLevel}] Sample Question ${i + 1}: Select the correct option to complete the sentence.`,
+                        options: [
+                            `Option A for question ${i + 1}`,
+                            `Option B for question ${i + 1}`,
+                            `Option C for question ${i + 1}`,
+                            `Option D for question ${i + 1}`
+                        ]
+                    }));
+
+                    this.step = 2;
+                },
+
+                nextQuestion() {
+                    if (this.userAnswers[this.questions[this.currentQuestionIndex].id] === undefined) {
+                        Swal.fire({
+                            icon: 'warning',
+                            title: 'پاسخ انتخاب نشده',
+                            text: 'لطفاً قبل از رفتن به سوال بعدی، گزینه مورد نظر خود را انتخاب کنید.',
+                            confirmButtonText: 'متوجه شدم',
+                            confirmButtonColor: '#F26419'
+                        });
+                        return;
+                    }
+                    if (this.currentQuestionIndex < this.questions.length - 1) {
+                        this.currentQuestionIndex++;
+                    }
+                },
+
+                prevQuestion() {
+                    if (this.currentQuestionIndex > 0) {
+                        this.currentQuestionIndex--;
+                    }
+                },
+
+                submitTest() {
+                    // بررسی پاسخ دادن به تمامی سوالات
+                    if (Object.keys(this.userAnswers).length < this.questions.length) {
+                        Swal.fire({
+                            icon: 'error',
+                            title: 'سوالات ناقص',
+                            text: 'لطفاً به تمامی ۲۰ سوال پاسخ دهید سپس اقدام به ثبت فرم نمایید.',
+                            confirmButtonText: 'تکمیل سوالات',
+                            confirmButtonColor: '#F26419'
+                        });
+                        return;
+                    }
+
+                    // آماده‌سازی داده‌ها برای ارسال به بک‌اند
+                    const payload = {
+                        level: this.selectedLevel,
+                        answers: this.userAnswers
+                    };
+
+                    Swal.fire({
+                        title: 'در حال ارسال پاسخ‌ها...',
+                        text: 'لطفاً شکیبا باشید، پاسخ‌های شما برای ارزیابی ارسال می‌شود.',
+                        icon: 'info',
+                        showConfirmButton: false,
+                        allowOutsideClick: false,
+                        didOpen: () => {
+                            Swal.showLoading();
+
+                            // شبیه‌سازی ارسال به بک‌اند
+                            setTimeout(() => {
+                                Swal.fire({
+                                    icon: 'success',
+                                    title: 'پاسخ‌ها با موفقیت ثبت شدند!',
+                                    text: 'اطلاعات جهت بررسی صحت پاسخ‌ها به بک‌اند ارسال شد.',
+                                    confirmButtonText: 'تایید',
+                                    confirmButtonColor: '#F26419'
+                                });
+                                console.log('Data ready for Backend:', payload);
+                            }, 1500);
+                        }
+                    });
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>

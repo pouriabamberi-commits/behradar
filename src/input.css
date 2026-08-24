@@ -1,0 +1,13 @@
+@import "tailwindcss";
+
+@theme {
+    /* تعریف رنگ‌های برند */
+    --color-brand-100: #f6ae2d;
+    --color-brand-200: #f59c28;
+    --color-brand-300: #f48923;
+    --color-brand-400: #f3771e;
+    --color-brand-500: #f26419;
+
+    /* تعریف فونت وزیر */
+    --font-vazir: Vazirmatn;
+}
