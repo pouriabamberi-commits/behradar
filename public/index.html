@@ -194,123 +194,62 @@
                         <i class="fa-solid fa-graduation-cap text-base"></i>
                         <span>تعیین سطح آنلاین</span>
                     </a>
-
-                    <!-- Hamburger Button (Mobile) -->
-                    <button @click="mobileMenuOpen = true" type="button"
-                        class="md:hidden p-2.5 rounded-xl text-slate-700 hover:text-brand-500 hover:bg-slate-100 transition-colors focus:outline-none focus:ring-2 focus:ring-brand-100"
-                        aria-label="باز کردن منوی موبایل">
-                        <i class="fa-solid fa-bars-staggered text-xl"></i>
-                    </button>
                 </div>
 
             </div>
         </div>
     </header>
 
-    <!-- MOBILE OFF-CANVAS DRAWER (RIGHT SIDE) -->
-    <div x-show="mobileMenuOpen" class="relative z-50 md:hidden" aria-modal="true" role="dialog" style="display: none;">
+    <!-- APP-LIKE BOTTOM NAVIGATION (MOBILE & TABLET) -->
+    <div
+        class="fixed bottom-0 inset-x-0 z-50 md:hidden bg-white/95 backdrop-blur-lg border-t border-slate-200/80 shadow-[0_-4px_20px_rgba(0,0,0,0.08)] px-2 py-2">
+        <nav class="flex items-center justify-around max-w-md mx-auto">
 
-        <!-- Backdrop Overlay -->
-        <div x-show="mobileMenuOpen" x-transition:enter="ease-out duration-300" x-transition:enter-start="opacity-0"
-            x-transition:enter-end="opacity-100" x-transition:leave="ease-in duration-200"
-            x-transition:leave-start="opacity-100" x-transition:leave-end="opacity-0" @click="mobileMenuOpen = false"
-            class="fixed inset-0 bg-slate-950/60 backdrop-blur-sm"></div>
-
-        <!-- Right Side Drawer -->
-        <div class="fixed inset-y-0 right-0 z-50 w-4/5 max-w-sm bg-white shadow-2xl flex flex-col justify-between overflow-y-auto"
-            x-show="mobileMenuOpen" x-transition:enter="transform transition ease-in-out duration-300"
-            x-transition:enter-start="translate-x-full" x-transition:enter-end="translate-x-0"
-            x-transition:leave="transform transition ease-in-out duration-300" x-transition:leave-start="translate-x-0"
-            x-transition:leave-end="translate-x-full">
-
-            <div>
-                <!-- Drawer Top Header -->
-                <div class="p-5 border-b border-slate-100 flex items-center justify-between bg-slate-50/50">
-                    <div class="flex items-center gap-3">
-                        <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-brand-500 to-brand-100 p-0.5">
-                            <div
-                                class="w-full h-full bg-white rounded-[9px] flex items-center justify-center overflow-hidden">
-                                <img src="assets/images/logo.png" alt="لوگو" class="w-6 h-6 object-contain"
-                                    onerror="this.onerror=null; this.src='https://ui-avatars.com/api/?name=Bahman+Behradfar&background=F26419&color=fff';">
-                            </div>
-                        </div>
-                        <div class="flex flex-col">
-                            <span class="font-bold text-slate-900 text-sm">بهمن بهرادفر</span>
-                            <span class="text-[11px] text-brand-500 font-medium">مدرس زبان انگلیسی</span>
-                        </div>
-                    </div>
-                    <button @click="mobileMenuOpen = false"
-                        class="p-2 rounded-xl text-slate-400 hover:text-slate-700 hover:bg-slate-200/60 transition-colors focus:outline-none"
-                        aria-label="بستن منو">
-                        <i class="fa-solid fa-xmark text-xl"></i>
-                    </button>
+            <!-- ۱. صفحه اصلی -->
+            <a href="index.html" class="flex flex-col items-center gap-1 text-brand-500 transition-all duration-200">
+                <div class="w-10 h-8 rounded-full bg-brand-100/20 flex items-center justify-center">
+                    <i class="fa-solid fa-house text-base"></i>
                 </div>
+                <span class="text-[11px] font-bold">صفحه اصلی</span>
+            </a>
 
-                <!-- Navigation Links List -->
-                <nav class="p-4 space-y-1.5">
-                    <a href="index.html"
-                        class="flex items-center justify-between px-4 py-2.5 rounded-xl font-bold text-brand-500 bg-brand-100/10 border border-brand-100/20">
-                        <div class="flex items-center gap-3">
-                            <i class="fa-solid fa-house text-lg w-6 text-center text-brand-500"></i>
-                            <span>صفحه اصلی</span>
-                        </div>
-                        <i class="fa-solid fa-chevron-left text-xs text-brand-500"></i>
-                    </a>
+            <!-- ۲. درباره من -->
+            <a href="about.html"
+                class="flex flex-col items-center gap-1 text-slate-500 hover:text-brand-500 transition-all duration-200">
+                <div class="w-10 h-8 rounded-full flex items-center justify-center">
+                    <i class="fa-solid fa-user-graduate text-base"></i>
+                </div>
+                <span class="text-[11px] font-medium">درباره من</span>
+            </a>
 
-                    <a href="about.html"
-                        class="flex items-center justify-between px-4 py-2.5 rounded-xl font-medium text-slate-600 hover:bg-slate-50 hover:text-brand-500 transition-all duration-200">
-                        <div class="flex items-center gap-3">
-                            <i class="fa-solid fa-user-graduate text-lg w-6 text-center text-slate-400"></i>
-                            <span>درباره من</span>
-                        </div>
-                        <i class="fa-solid fa-chevron-left text-xs text-slate-300"></i>
-                    </a>
+            <!-- ۳. تعیین سطح -->
+            <a href="placement-test.html"
+                class="flex flex-col items-center gap-1 text-slate-500 hover:text-brand-500 transition-all duration-200">
+                <div class="w-10 h-8 rounded-full flex items-center justify-center">
+                    <i class="fa-solid fa-list-check text-base"></i>
+                </div>
+                <span class="text-[11px] font-medium">تعیین سطح</span>
+            </a>
 
-                    <a href="placement-test.html"
-                        class="flex items-center justify-between px-4 py-2.5 rounded-xl font-medium text-slate-600 hover:bg-slate-50 hover:text-brand-500 transition-all duration-200">
-                        <div class="flex items-center gap-3">
-                            <i class="fa-solid fa-list-check text-lg w-6 text-center text-slate-400"></i>
-                            <span>تعیین سطح آنلاین</span>
-                        </div>
-                        <i class="fa-solid fa-chevron-left text-xs text-slate-300"></i>
-                    </a>
+            <!-- ۴. وبلاگ -->
+            <a href="blog.html"
+                class="flex flex-col items-center gap-1 text-slate-500 hover:text-brand-500 transition-all duration-200">
+                <div class="w-10 h-8 rounded-full flex items-center justify-center">
+                    <i class="fa-solid fa-newspaper text-base"></i>
+                </div>
+                <span class="text-[11px] font-medium">وبلاگ</span>
+            </a>
 
-                    <a href="blog.html"
-                        class="flex items-center justify-between px-4 py-2.5 rounded-xl font-medium text-slate-600 hover:bg-slate-50 hover:text-brand-500 transition-all duration-200">
-                        <div class="flex items-center gap-3">
-                            <i class="fa-solid fa-newspaper text-lg w-6 text-center text-slate-400"></i>
-                            <span>وبلاگ و مقالات</span>
-                        </div>
-                        <i class="fa-solid fa-chevron-left text-xs text-slate-300"></i>
-                    </a>
+            <!-- ۵. دانلود فایل‌ها -->
+            <a href="downloads.html"
+                class="flex flex-col items-center gap-1 text-slate-500 hover:text-brand-500 transition-all duration-200">
+                <div class="w-10 h-8 rounded-full flex items-center justify-center">
+                    <i class="fa-solid fa-folder-open text-base"></i>
+                </div>
+                <span class="text-[11px] font-medium">دانلود فایل‌ها</span>
+            </a>
 
-                    <a href="downloads.html"
-                        class="flex items-center justify-between px-4 py-2.5 rounded-xl font-medium text-slate-600 hover:bg-slate-50 hover:text-brand-500 transition-all duration-200">
-                        <div class="flex items-center gap-3">
-                            <i class="fa-solid fa-folder-open text-lg w-6 text-center text-slate-400"></i>
-                            <span>دانلود جزوات و فایل‌ها</span>
-                        </div>
-                        <i class="fa-solid fa-chevron-left text-xs text-slate-300"></i>
-                    </a>
-                </nav>
-            </div>
-
-            <!-- Drawer Bottom Actions -->
-            <div class="p-4 border-t border-slate-100 bg-slate-50/80 space-y-2.5">
-                <a href="placement-test.html"
-                    class="flex items-center justify-center gap-2 w-full py-2.5 rounded-xl bg-gradient-to-r from-brand-300 via-brand-400 to-brand-500 text-white font-bold shadow-md shadow-brand-500/20 active:scale-[0.98] transition-all">
-                    <i class="fa-solid fa-graduation-cap"></i>
-                    <span>شروع تعیین سطح رایگان</span>
-                </a>
-
-                <a href="login.html"
-                    class="flex items-center justify-center gap-2 w-full py-2.5 rounded-xl border border-slate-200 bg-white text-slate-700 text-sm font-bold hover:bg-slate-100 transition-colors">
-                    <i class="fa-regular fa-user text-brand-400"></i>
-                    <span>ورود / ثبت‌نام حساب کاربری</span>
-                </a>
-            </div>
-
-        </div>
+        </nav>
     </div>
 
     <!-- HERO SLIDER SECTION -->
@@ -1080,7 +1019,8 @@
                                 class="hover:text-[#F6AE2D] transition-colors flex items-center gap-2"><i
                                     class="fa-solid fa-angle-left text-[10px] text-[#F26419]"></i> ثبت‌نام دانش‌آموز
                                 جدید</a></li>
-                        <li><a href="./rule.html" class="hover:text-[#F6AE2D] transition-colors flex items-center gap-2"><i
+                        <li><a href="./rule.html"
+                                class="hover:text-[#F6AE2D] transition-colors flex items-center gap-2"><i
                                     class="fa-solid fa-angle-left text-[10px] text-[#F26419]"></i> قوانین و مقررات</a>
                         </li>
                     </ul>

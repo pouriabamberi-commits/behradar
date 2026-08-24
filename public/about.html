@@ -67,82 +67,177 @@
     x-data="{ mobileMenuOpen: false, searchQuery: '' }">
 
     <!-- HEADER / NAVIGATION -->
-    <header class="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-slate-100 shadow-sm">
-        <div class="golden-container mx-auto px-4 sm:px-6 lg:px-8">
+    <header
+        class="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-slate-100 shadow-sm transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex items-center justify-between h-20">
-                <a href="index.html" class="flex items-center gap-3.5 group">
-                    <div class="w-12 h-12 rounded-2xl bg-gradient-to-tr from-brand-500 to-brand-100 p-0.5 shadow-md">
-                        <div class="w-full h-full bg-white rounded-[14px] flex items-center justify-center">
-                            <img src="assets/images/logo.png" alt="لوگو" class="w-8 h-8 object-contain"
-                                onerror="this.onerror=null; this.src='https://ui-avatars.com/api/?name=Bahman+Behradfar&background=F26419&color=fff';">
+
+                <!-- Logo & Teacher Branding -->
+                <a href="index.html" class="flex items-center gap-3.5 group focus:outline-none"
+                    aria-label="صفحه اصلی وبسایت استاد بهمن بهرادفر">
+                    <div
+                        class="relative w-12 h-12 rounded-2xl bg-gradient-to-tr from-brand-500 via-brand-300 to-brand-100 p-0.5 shadow-md shadow-brand-500/20 group-hover:shadow-lg group-hover:shadow-brand-500/30 group-hover:scale-105 transition-all duration-300">
+                        <div
+                            class="w-full h-full bg-white rounded-[14px] flex items-center justify-center overflow-hidden">
+                            <img src="assets/images/logo.png" alt="لوگوی رسمی استاد بهمن بهرادفر"
+                                class="w-8 h-8 object-contain transition-transform duration-300 group-hover:scale-110"
+                                onerror="this.onerror=null; this.src='https://ui-avatars.com/api/?name=Bahman+Behradfar&background=F26419&color=fff&font-size=0.38&bold=true';">
                         </div>
                     </div>
                     <div class="flex flex-col">
-                        <span class="text-lg font-black text-slate-900">بهمن بهرادفر</span>
-                        <span class="text-xs font-semibold text-brand-500">مدرس ارشد زبان انگلیسی</span>
+                        <span
+                            class="text-lg font-black text-slate-900 tracking-tight group-hover:text-brand-500 transition-colors duration-200">بهمن
+                            بهرادفر</span>
+                        <span class="text-xs font-semibold text-brand-500 tracking-normal">مدرس ارشد زبان انگلیسی</span>
                     </div>
                 </a>
 
-                <nav class="hidden md:flex items-center gap-1 bg-slate-50 p-1.5 rounded-2xl border border-slate-100">
-                    <a href="index.html" class="px-4 py-2 rounded-xl text-sm font-medium text-slate-600 hover:text-brand-500">صفحه اصلی</a>
-                    <a href="about.html" class="px-4 py-2 rounded-xl text-sm font-bold text-brand-500 bg-white shadow-sm">درباره من</a>
-                    <a href="placement-test.html" class="px-4 py-2 rounded-xl text-sm font-medium text-slate-600 hover:text-brand-500">تعیین سطح</a>
-                    <a href="blog.html" class="px-4 py-2 rounded-xl text-sm font-medium text-slate-600 hover:text-brand-500">وبلاگ</a>
-                    <a href="downloads.html" class="px-4 py-2 rounded-xl text-sm font-medium text-slate-600 hover:text-brand-500">دانلود فایل‌ها</a>
+                <!-- Desktop Navigation Links -->
+                <nav
+                    class="hidden md:flex items-center gap-1 lg:gap-1.5 bg-slate-50/80 p-1.5 rounded-2xl border border-slate-100">
+                    <a href="index.html"
+                        class="px-4 py-2 rounded-xl text-sm font-bold text-brand-500 bg-white shadow-sm transition-all duration-200"
+                        aria-current="page">
+                        صفحه اصلی
+                    </a>
+                    <a href="about.html"
+                        class="px-4 py-2 rounded-xl text-sm font-medium text-slate-600 hover:text-brand-500 hover:bg-white/60 transition-all duration-200">
+                        درباره من
+                    </a>
+                    <a href="placement-test.html"
+                        class="px-4 py-2 rounded-xl text-sm font-medium text-slate-600 hover:text-brand-500 hover:bg-white/60 transition-all duration-200">
+                        تعیین سطح
+                    </a>
+                    <a href="blog.html"
+                        class="px-4 py-2 rounded-xl text-sm font-medium text-slate-600 hover:text-brand-500 hover:bg-white/60 transition-all duration-200">
+                        وبلاگ
+                    </a>
+                    <a href="downloads.html"
+                        class="px-4 py-2 rounded-xl text-sm font-medium text-slate-600 hover:text-brand-500 hover:bg-white/60 transition-all duration-200">
+                        دانلود فایل‌ها
+                    </a>
                 </nav>
 
+                <!-- Desktop CTA & Auth -->
                 <div class="flex items-center gap-2.5">
+                    <a href="login.html"
+                        class="hidden lg:inline-flex items-center gap-2 px-4 py-2.5 rounded-xl text-slate-700 text-sm font-bold hover:text-brand-500 hover:bg-slate-100/80 transition-all duration-200">
+                        <i class="fa-regular fa-user text-base text-brand-400"></i>
+                        <span>ورود / ثبت‌نام</span>
+                    </a>
+
                     <a href="placement-test.html"
-                        class="hidden sm:inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-gradient-to-r from-brand-300 to-brand-500 text-white text-sm font-bold shadow-md hover:shadow-lg transition-all">
-                        <i class="fa-solid fa-graduation-cap"></i>
+                        class="hidden sm:inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-gradient-to-r from-brand-300 via-brand-400 to-brand-500 text-white text-sm font-bold shadow-md shadow-brand-500/25 hover:shadow-lg hover:shadow-brand-500/35 hover:-translate-y-0.5 active:translate-y-0 transition-all duration-200">
+                        <i class="fa-solid fa-graduation-cap text-base"></i>
                         <span>تعیین سطح آنلاین</span>
                     </a>
-                    <button @click="mobileMenuOpen = true" class="md:hidden p-2.5 rounded-xl text-slate-700 hover:bg-slate-100">
-                        <i class="fa-solid fa-bars-staggered text-xl"></i>
-                    </button>
                 </div>
+
             </div>
         </div>
     </header>
 
+    <!-- APP-LIKE BOTTOM NAVIGATION (MOBILE & TABLET) -->
+    <div
+        class="fixed bottom-0 inset-x-0 z-50 md:hidden bg-white/95 backdrop-blur-lg border-t border-slate-200/80 shadow-[0_-4px_20px_rgba(0,0,0,0.08)] px-2 py-2">
+        <nav class="flex items-center justify-around max-w-md mx-auto">
+
+            <!-- ۱. صفحه اصلی -->
+            <a href="index.html" class="flex flex-col items-center gap-1 text-brand-500 transition-all duration-200">
+                <div class="w-10 h-8 rounded-full bg-brand-100/20 flex items-center justify-center">
+                    <i class="fa-solid fa-house text-base"></i>
+                </div>
+                <span class="text-[11px] font-bold">صفحه اصلی</span>
+            </a>
+
+            <!-- ۲. درباره من -->
+            <a href="about.html"
+                class="flex flex-col items-center gap-1 text-slate-500 hover:text-brand-500 transition-all duration-200">
+                <div class="w-10 h-8 rounded-full flex items-center justify-center">
+                    <i class="fa-solid fa-user-graduate text-base"></i>
+                </div>
+                <span class="text-[11px] font-medium">درباره من</span>
+            </a>
+
+            <!-- ۳. تعیین سطح -->
+            <a href="placement-test.html"
+                class="flex flex-col items-center gap-1 text-slate-500 hover:text-brand-500 transition-all duration-200">
+                <div class="w-10 h-8 rounded-full flex items-center justify-center">
+                    <i class="fa-solid fa-list-check text-base"></i>
+                </div>
+                <span class="text-[11px] font-medium">تعیین سطح</span>
+            </a>
+
+            <!-- ۴. وبلاگ -->
+            <a href="blog.html"
+                class="flex flex-col items-center gap-1 text-slate-500 hover:text-brand-500 transition-all duration-200">
+                <div class="w-10 h-8 rounded-full flex items-center justify-center">
+                    <i class="fa-solid fa-newspaper text-base"></i>
+                </div>
+                <span class="text-[11px] font-medium">وبلاگ</span>
+            </a>
+
+            <!-- ۵. دانلود فایل‌ها -->
+            <a href="downloads.html"
+                class="flex flex-col items-center gap-1 text-slate-500 hover:text-brand-500 transition-all duration-200">
+                <div class="w-10 h-8 rounded-full flex items-center justify-center">
+                    <i class="fa-solid fa-folder-open text-base"></i>
+                </div>
+                <span class="text-[11px] font-medium">دانلود فایل‌ها</span>
+            </a>
+
+        </nav>
+    </div>
     <!-- SECTION 1: BRIEF INTRO & GOLDEN RATIO HERO (62% vs 38%) -->
     <section class="py-12 md:py-20 relative overflow-hidden">
         <div class="golden-container mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-                
+
                 <!-- 62% Width Column (Golden Ratio Primary Focus) -->
                 <div class="lg:col-span-7 space-y-6 text-right gsap-hero-text">
-                    <span class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-brand-500/10 text-brand-500 text-xs sm:text-sm font-bold">
+                    <span
+                        class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-brand-500/10 text-brand-500 text-xs sm:text-sm font-bold">
                         <i class="fa-solid fa-user-tie"></i>
                         <span>شناسنامه علمی و حرفه‌ای</span>
                     </span>
 
                     <h1 class="text-3xl sm:text-5xl font-black text-slate-900 leading-tight">
-                        استاد <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-500 via-brand-400 to-brand-300">بهمن بهرادفر</span>
+                        استاد <span
+                            class="text-transparent bg-clip-text bg-gradient-to-r from-brand-500 via-brand-400 to-brand-300">بهمن
+                            بهرادفر</span>
                     </h1>
 
                     <!-- Short Intro (توضیح کوتاه درباره دبیر) -->
                     <p class="text-slate-600 text-base sm:text-lg leading-relaxed font-medium">
-                        مدرس ارشد، پژوهشگر حوزه آموزش زبان انگلیسی و طراح آزمون‌های استاندارد آیلتس با بیش از ۱۲ سال سابقه تدریس موفق در برترین مراکز بین‌المللی.
+                        مدرس ارشد، پژوهشگر حوزه آموزش زبان انگلیسی و طراح آزمون‌های استاندارد آیلتس با بیش از ۱۲ سال
+                        سابقه تدریس موفق در برترین مراکز بین‌المللی.
                     </p>
 
                     <!-- Detailed Bio Box (توضیح کامل داخل یک باکس اختصاصی) -->
-                    <div class="bg-white p-6 sm:p-8 rounded-3xl border border-slate-100 shadow-xl shadow-slate-200/50 relative overflow-hidden">
-                        <div class="absolute top-0 right-0 w-2 h-full bg-gradient-to-b from-brand-300 to-brand-500"></div>
+                    <div
+                        class="bg-white p-6 sm:p-8 rounded-3xl border border-slate-100 shadow-xl shadow-slate-200/50 relative overflow-hidden">
+                        <div class="absolute top-0 right-0 w-2 h-full bg-gradient-to-b from-brand-300 to-brand-500">
+                        </div>
                         <h3 class="text-base font-bold text-slate-900 mb-3 flex items-center gap-2">
                             <i class="fa-solid fa-quote-right text-brand-500"></i>
                             <span>درباره سبُک و فلسفه آموزشی استاد</span>
                         </h3>
                         <p class="text-slate-600 text-sm sm:text-base leading-loose text-justify">
-                            استاد بهمن بهرادفر فعالیت حرفه‌ای خود را از سال ۱۳۹۱ با هدف تغییر متدهای سنتی یادگیری زبان در ایران آغاز کرد. وی با ترکیب روانشناسی یادگیری و تکنیک‌های نوین ارتباطی، متد اختصاصی "Active Fluency" را طراحی نمود. هدف این رویکرد، حذف حفظیات طوطی‌وار گرامر و جایگزینی آن با ساختار‌سازی ذهنی ناخودآگاه است. تا به امروز بیش از ۵۰۰ زبان‌آموز تحت نظارت مستقیم ایشان موفق به کسب نمره‌های بالای ۷.۵ در آزمون آیلتس و پذیرش در دانشگاه‌های مطرح جهان شده‌اند.
+                            استاد بهمن بهرادفر فعالیت حرفه‌ای خود را از سال ۱۳۹۱ با هدف تغییر متدهای سنتی یادگیری زبان
+                            در ایران آغاز کرد. وی با ترکیب روانشناسی یادگیری و تکنیک‌های نوین ارتباطی، متد اختصاصی
+                            "Active Fluency" را طراحی نمود. هدف این رویکرد، حذف حفظیات طوطی‌وار گرامر و جایگزینی آن با
+                            ساختار‌سازی ذهنی ناخودآگاه است. تا به امروز بیش از ۵۰۰ زبان‌آموز تحت نظارت مستقیم ایشان موفق
+                            به کسب نمره‌های بالای ۷.۵ در آزمون آیلتس و پذیرش در دانشگاه‌های مطرح جهان شده‌اند.
                         </p>
                     </div>
 
                     <div class="flex flex-wrap items-center gap-4 pt-2">
-                        <a href="#skills" class="px-6 py-3.5 rounded-xl bg-brand-500 text-white font-bold text-sm shadow-lg shadow-brand-500/30 hover:bg-brand-400 transition-all">
+                        <a href="#skills"
+                            class="px-6 py-3.5 rounded-xl bg-brand-500 text-white font-bold text-sm shadow-lg shadow-brand-500/30 hover:bg-brand-400 transition-all">
                             بررسی مهارت‌ها
                         </a>
-                        <a href="#books" class="px-6 py-3.5 rounded-xl border border-slate-200 bg-white text-slate-700 font-bold text-sm hover:bg-slate-50 transition-all">
+                        <a href="#books"
+                            class="px-6 py-3.5 rounded-xl border border-slate-200 bg-white text-slate-700 font-bold text-sm hover:bg-slate-50 transition-all">
                             تألیفات و کتاب‌ها
                         </a>
                     </div>
@@ -150,12 +245,17 @@
 
                 <!-- 38% Width Column (Golden Ratio Visual Box) -->
                 <div class="lg:col-span-5 relative flex justify-center gsap-hero-img">
-                    <div class="relative w-full max-w-md aspect-[1/1.2] rounded-3xl bg-gradient-to-tr from-brand-500 to-brand-100 p-1.5 shadow-2xl">
+                    <div
+                        class="relative w-full max-w-md aspect-[1/1.2] rounded-3xl bg-gradient-to-tr from-brand-500 to-brand-100 p-1.5 shadow-2xl">
                         <div class="w-full h-full bg-slate-900 rounded-[22px] overflow-hidden relative">
-                            <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=800&q=80" 
-                                 alt="استاد بهمن بهرادفر" class="w-full h-full object-cover opacity-90 hover:scale-105 transition-transform duration-700">
-                            <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent"></div>
-                            <div class="absolute bottom-5 right-5 left-5 bg-white/90 backdrop-blur-md p-4 rounded-2xl border border-white/20 text-right shadow-lg">
+                            <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=800&q=80"
+                                alt="استاد بهمن بهرادفر"
+                                class="w-full h-full object-cover opacity-90 hover:scale-105 transition-transform duration-700">
+                            <div
+                                class="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent">
+                            </div>
+                            <div
+                                class="absolute bottom-5 right-5 left-5 bg-white/90 backdrop-blur-md p-4 rounded-2xl border border-white/20 text-right shadow-lg">
                                 <span class="text-xs font-bold text-brand-500 block">TESOL Certified</span>
                                 <span class="text-sm font-black text-slate-900">مدرس بین‌المللی زبان انگلیسی</span>
                             </div>
@@ -177,33 +277,42 @@
 
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 <!-- Timeline/Record Card 1 -->
-                <div class="bg-white p-6 rounded-2xl border border-slate-200/80 shadow-sm hover:shadow-md transition-all space-y-3" data-aos="fade-up" data-aos-delay="100">
-                    <div class="w-12 h-12 rounded-xl bg-brand-500/10 text-brand-500 flex items-center justify-center text-xl font-bold">
+                <div class="bg-white p-6 rounded-2xl border border-slate-200/80 shadow-sm hover:shadow-md transition-all space-y-3"
+                    data-aos="fade-up" data-aos-delay="100">
+                    <div
+                        class="w-12 h-12 rounded-xl bg-brand-500/10 text-brand-500 flex items-center justify-center text-xl font-bold">
                         <i class="fa-solid fa-briefcase"></i>
                     </div>
                     <span class="text-xs font-bold text-brand-500">۱۳۹۶ - تاکنون</span>
                     <h3 class="text-lg font-bold text-slate-900">مدرس ارشد و سوپروایزر آیلتس</h3>
-                    <p class="text-xs text-slate-500 leading-relaxed">سرپرست دپارتمان زبان انگلیسی و طراح کورس‌های آمادگی آزمون‌های بین‌المللی.</p>
+                    <p class="text-xs text-slate-500 leading-relaxed">سرپرست دپارتمان زبان انگلیسی و طراح کورس‌های
+                        آمادگی آزمون‌های بین‌المللی.</p>
                 </div>
 
                 <!-- Timeline/Record Card 2 -->
-                <div class="bg-white p-6 rounded-2xl border border-slate-200/80 shadow-sm hover:shadow-md transition-all space-y-3" data-aos="fade-up" data-aos-delay="200">
-                    <div class="w-12 h-12 rounded-xl bg-brand-500/10 text-brand-500 flex items-center justify-center text-xl font-bold">
+                <div class="bg-white p-6 rounded-2xl border border-slate-200/80 shadow-sm hover:shadow-md transition-all space-y-3"
+                    data-aos="fade-up" data-aos-delay="200">
+                    <div
+                        class="w-12 h-12 rounded-xl bg-brand-500/10 text-brand-500 flex items-center justify-center text-xl font-bold">
                         <i class="fa-solid fa-certificate"></i>
                     </div>
                     <span class="text-xs font-bold text-brand-500">مدرک بین‌المللی</span>
                     <h3 class="text-lg font-bold text-slate-900">گواهی‌نامه مدرسی TESOL</h3>
-                    <p class="text-xs text-slate-500 leading-relaxed">دارای مدرک رسمی آموزش زبان به غیرانگلیسی‌زبانان از مرکز معتبر بریتانیا.</p>
+                    <p class="text-xs text-slate-500 leading-relaxed">دارای مدرک رسمی آموزش زبان به غیرانگلیسی‌زبانان از
+                        مرکز معتبر بریتانیا.</p>
                 </div>
 
                 <!-- Timeline/Record Card 3 -->
-                <div class="bg-white p-6 rounded-2xl border border-slate-200/80 shadow-sm hover:shadow-md transition-all space-y-3" data-aos="fade-up" data-aos-delay="300">
-                    <div class="w-12 h-12 rounded-xl bg-brand-500/10 text-brand-500 flex items-center justify-center text-xl font-bold">
+                <div class="bg-white p-6 rounded-2xl border border-slate-200/80 shadow-sm hover:shadow-md transition-all space-y-3"
+                    data-aos="fade-up" data-aos-delay="300">
+                    <div
+                        class="w-12 h-12 rounded-xl bg-brand-500/10 text-brand-500 flex items-center justify-center text-xl font-bold">
                         <i class="fa-solid fa-users text-xl"></i>
                     </div>
                     <span class="text-xs font-bold text-brand-500">+۵۰۰۰ زبان‌آموز</span>
                     <h3 class="text-lg font-bold text-slate-900">تدریس به هزاران داوطلب</h3>
-                    <p class="text-xs text-slate-500 leading-relaxed">برگزاری دوره‌های حضوری و آنلاین موفق برای مهاجرت کاری و تحصیلی.</p>
+                    <p class="text-xs text-slate-500 leading-relaxed">برگزاری دوره‌های حضوری و آنلاین موفق برای مهاجرت
+                        کاری و تحصیلی.</p>
                 </div>
             </div>
         </div>
@@ -229,7 +338,8 @@
                         </div>
                         <span class="text-sm font-black text-brand-500">98%</span>
                     </div>
-                    <p class="text-xs text-slate-500 leading-relaxed">آموزش لهجه، Fluency، ساختاردهی سریع به پاسخ‌ها و غلبه کامل بر استرس شفاف‌سازی.</p>
+                    <p class="text-xs text-slate-500 leading-relaxed">آموزش لهجه، Fluency، ساختاردهی سریع به پاسخ‌ها و
+                        غلبه کامل بر استرس شفاف‌سازی.</p>
                     <div class="w-full h-2 bg-slate-100 rounded-full overflow-hidden">
                         <div class="h-full bg-brand-500 rounded-full" style="width: 98%;"></div>
                     </div>
@@ -246,7 +356,8 @@
                         </div>
                         <span class="text-sm font-black text-brand-500">95%</span>
                     </div>
-                    <p class="text-xs text-slate-500 leading-relaxed">تکنیک‌های فرمول‌نویسی Task 1 & Task 2، ایده‌پردازی منسجم و استفاده از Collocationهای پیشرفته.</p>
+                    <p class="text-xs text-slate-500 leading-relaxed">تکنیک‌های فرمول‌نویسی Task 1 & Task 2، ایده‌پردازی
+                        منسجم و استفاده از Collocationهای پیشرفته.</p>
                     <div class="w-full h-2 bg-slate-100 rounded-full overflow-hidden">
                         <div class="h-full bg-brand-500 rounded-full" style="width: 95%;"></div>
                     </div>
@@ -263,7 +374,8 @@
                         </div>
                         <span class="text-sm font-black text-brand-500">92%</span>
                     </div>
-                    <p class="text-xs text-slate-500 leading-relaxed">روش‌های Skimming و Scanning، مدیریت زمان طلایی و اسکن هوشمند کلمات کلیدی.</p>
+                    <p class="text-xs text-slate-500 leading-relaxed">روش‌های Skimming و Scanning، مدیریت زمان طلایی و
+                        اسکن هوشمند کلمات کلیدی.</p>
                     <div class="w-full h-2 bg-slate-100 rounded-full overflow-hidden">
                         <div class="h-full bg-brand-500 rounded-full" style="width: 92%;"></div>
                     </div>
@@ -280,7 +392,8 @@
                         </div>
                         <span class="text-sm font-black text-brand-500">96%</span>
                     </div>
-                    <p class="text-xs text-slate-500 leading-relaxed">تقویت گوش در برابر لهجه‌های مختلف (British, Australian, American) و تکنیک‌های نت‌برداری.</p>
+                    <p class="text-xs text-slate-500 leading-relaxed">تقویت گوش در برابر لهجه‌های مختلف (British,
+                        Australian, American) و تکنیک‌های نت‌برداری.</p>
                     <div class="w-full h-2 bg-slate-100 rounded-full overflow-hidden">
                         <div class="h-full bg-brand-500 rounded-full" style="width: 96%;"></div>
                     </div>
@@ -292,7 +405,7 @@
     <!-- SECTION 4: BOOKS & PUBLICATIONS WITH SEARCH (تألیفات دبیر + سرچ زنده) -->
     <section id="books" class="py-16 bg-slate-50 border-t border-slate-200/60 relative">
         <div class="golden-container mx-auto px-4 sm:px-6 lg:px-8">
-            
+
             <div class="flex flex-col md:flex-row items-center justify-between gap-6 mb-12">
                 <div class="space-y-2 text-right">
                     <span class="text-brand-500 font-bold text-xs sm:text-sm">تألیفات اختصاصی</span>
@@ -303,7 +416,8 @@
                 <div class="w-full md:w-80 relative">
                     <input type="text" x-model="searchQuery" placeholder="جستجوی نام کتاب..."
                         class="w-full px-4 py-3 pr-10 rounded-xl bg-white border border-slate-200 text-sm focus:outline-none focus:border-brand-500 transition-all shadow-sm">
-                    <i class="fa-solid fa-magnifying-glass absolute right-3.5 top-1/2 -translate-y-1/2 text-slate-400"></i>
+                    <i
+                        class="fa-solid fa-magnifying-glass absolute right-3.5 top-1/2 -translate-y-1/2 text-slate-400"></i>
                 </div>
             </div>
 
@@ -312,51 +426,63 @@
 
                 <!-- Book Item 1 -->
                 <div class="book-card bg-white rounded-2xl p-5 border border-slate-100 shadow-sm hover:shadow-xl transition-all space-y-4 flex flex-col justify-between"
-                     x-show="searchQuery === '' || 'کلید طلایی اسپیکینگ آیلتس'.includes(searchQuery)">
+                    x-show="searchQuery === '' || 'کلید طلایی اسپیکینگ آیلتس'.includes(searchQuery)">
                     <div class="aspect-[3/4] rounded-xl overflow-hidden bg-slate-100 relative">
-                        <img src="https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?auto=format&fit=crop&w=600&q=80" 
-                             alt="کتاب اسپیکینگ" class="w-full h-full object-cover">
-                        <span class="absolute top-3 right-3 bg-brand-500 text-white text-[11px] font-bold px-2.5 py-1 rounded-lg">چاپ پنجم</span>
+                        <img src="https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?auto=format&fit=crop&w=600&q=80"
+                            alt="کتاب اسپیکینگ" class="w-full h-full object-cover">
+                        <span
+                            class="absolute top-3 right-3 bg-brand-500 text-white text-[11px] font-bold px-2.5 py-1 rounded-lg">چاپ
+                            پنجم</span>
                     </div>
                     <div class="space-y-2 text-right">
                         <h3 class="font-bold text-slate-900 text-base book-title">کلید طلایی اسپیکینگ آیلتس</h3>
-                        <p class="text-xs text-slate-500 line-clamp-2">شامل ۵۰ موضوع پرتکرار آزمون‌های اخیر به همراه پاسخ‌های نمونه استاندارد Band 8.</p>
+                        <p class="text-xs text-slate-500 line-clamp-2">شامل ۵۰ موضوع پرتکرار آزمون‌های اخیر به همراه
+                            پاسخ‌های نمونه استاندارد Band 8.</p>
                     </div>
-                    <a href="downloads.html" class="w-full py-2.5 rounded-xl bg-slate-50 hover:bg-brand-500 hover:text-white text-slate-700 font-bold text-xs text-center transition-colors block">
+                    <a href="downloads.html"
+                        class="w-full py-2.5 rounded-xl bg-slate-50 hover:bg-brand-500 hover:text-white text-slate-700 font-bold text-xs text-center transition-colors block">
                         دانلود نمونه فصل اول
                     </a>
                 </div>
 
                 <!-- Book Item 2 -->
                 <div class="book-card bg-white rounded-2xl p-5 border border-slate-100 shadow-sm hover:shadow-xl transition-all space-y-4 flex flex-col justify-between"
-                     x-show="searchQuery === '' || 'معجزه گرامر در ۳۰ روز'.includes(searchQuery)">
+                    x-show="searchQuery === '' || 'معجزه گرامر در ۳۰ روز'.includes(searchQuery)">
                     <div class="aspect-[3/4] rounded-xl overflow-hidden bg-slate-100 relative">
-                        <img src="https://images.unsplash.com/photo-1589829085413-56de8ae18c73?auto=format&fit=crop&w=600&q=80" 
-                             alt="کتاب گرامر" class="w-full h-full object-cover">
-                        <span class="absolute top-3 right-3 bg-brand-500 text-white text-[11px] font-bold px-2.5 py-1 rounded-lg">تألیف ۱۴۰۴</span>
+                        <img src="https://images.unsplash.com/photo-1589829085413-56de8ae18c73?auto=format&fit=crop&w=600&q=80"
+                            alt="کتاب گرامر" class="w-full h-full object-cover">
+                        <span
+                            class="absolute top-3 right-3 bg-brand-500 text-white text-[11px] font-bold px-2.5 py-1 rounded-lg">تألیف
+                            ۱۴۰۴</span>
                     </div>
                     <div class="space-y-2 text-right">
                         <h3 class="font-bold text-slate-900 text-base book-title">معجزه گرامر در ۳۰ روز</h3>
-                        <p class="text-xs text-slate-500 line-clamp-2">آموزش کاربردی ساختارهای پیچیده گرامری بدون درگیر شدن با اصطلاحات سخت علمی.</p>
+                        <p class="text-xs text-slate-500 line-clamp-2">آموزش کاربردی ساختارهای پیچیده گرامری بدون درگیر
+                            شدن با اصطلاحات سخت علمی.</p>
                     </div>
-                    <a href="downloads.html" class="w-full py-2.5 rounded-xl bg-slate-50 hover:bg-brand-500 hover:text-white text-slate-700 font-bold text-xs text-center transition-colors block">
+                    <a href="downloads.html"
+                        class="w-full py-2.5 rounded-xl bg-slate-50 hover:bg-brand-500 hover:text-white text-slate-700 font-bold text-xs text-center transition-colors block">
                         دانلود نمونه فصل اول
                     </a>
                 </div>
 
                 <!-- Book Item 3 -->
                 <div class="book-card bg-white rounded-2xl p-5 border border-slate-100 shadow-sm hover:shadow-xl transition-all space-y-4 flex flex-col justify-between"
-                     x-show="searchQuery === '' || 'واژگان کلیدی رایتینگ آکادمیک'.includes(searchQuery)">
+                    x-show="searchQuery === '' || 'واژگان کلیدی رایتینگ آکادمیک'.includes(searchQuery)">
                     <div class="aspect-[3/4] rounded-xl overflow-hidden bg-slate-100 relative">
-                        <img src="https://images.unsplash.com/photo-1512820790803-83ca734da794?auto=format&fit=crop&w=600&q=80" 
-                             alt="کتاب واژگان" class="w-full h-full object-cover">
-                        <span class="absolute top-3 right-3 bg-brand-500 text-white text-[11px] font-bold px-2.5 py-1 rounded-lg">ویژه آیلتس</span>
+                        <img src="https://images.unsplash.com/photo-1512820790803-83ca734da794?auto=format&fit=crop&w=600&q=80"
+                            alt="کتاب واژگان" class="w-full h-full object-cover">
+                        <span
+                            class="absolute top-3 right-3 bg-brand-500 text-white text-[11px] font-bold px-2.5 py-1 rounded-lg">ویژه
+                            آیلتس</span>
                     </div>
                     <div class="space-y-2 text-right">
                         <h3 class="font-bold text-slate-900 text-base book-title">واژگان کلیدی رایتینگ آکادمیک</h3>
-                        <p class="text-xs text-slate-500 line-clamp-2">مجموعه اصطلاحات و کلمات سطح C1 و C2 برای ارتقای نمره رایتینگ به بالای ۷.</p>
+                        <p class="text-xs text-slate-500 line-clamp-2">مجموعه اصطلاحات و کلمات سطح C1 و C2 برای ارتقای
+                            نمره رایتینگ به بالای ۷.</p>
                     </div>
-                    <a href="downloads.html" class="w-full py-2.5 rounded-xl bg-slate-50 hover:bg-brand-500 hover:text-white text-slate-700 font-bold text-xs text-center transition-colors block">
+                    <a href="downloads.html"
+                        class="w-full py-2.5 rounded-xl bg-slate-50 hover:bg-brand-500 hover:text-white text-slate-700 font-bold text-xs text-center transition-colors block">
                         دانلود نمونه فصل اول
                     </a>
                 </div>
@@ -369,7 +495,8 @@
     <!-- FOOTER -->
     <footer class="bg-slate-900 text-slate-300 py-12 border-t border-slate-800">
         <div class="golden-container mx-auto px-4 text-center text-xs text-slate-500 space-y-4">
-            <p>تمامی حقوق این وب‌سایت متعلق به <span class="text-white font-bold">استاد بهمن بهرادفر</span> می‌باشد. © ۱۴۰۵</p>
+            <p>تمامی حقوق این وب‌سایت متعلق به <span class="text-white font-bold">استاد بهمن بهرادفر</span> می‌باشد. ©
+                ۱۴۰۵</p>
         </div>
     </footer>
 

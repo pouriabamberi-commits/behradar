@@ -54,37 +54,128 @@
 
 <body class="bg-slate-50 text-slate-800 font-sans antialiased min-h-screen flex flex-col justify-between">
 
-    <!-- Header -->
-    <header class="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-slate-100 shadow-sm">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
-            <a href="#" class="flex items-center gap-3 group" title="صفحه اصلی استاد بهمن بهرادفر">
-                <div
-                    class="w-12 h-12 rounded-xl bg-gradient-to-tr from-dark-accent to-primary flex items-center justify-center text-white font-black text-xl shadow-md shadow-accent/20 group-hover:scale-105 transition-transform">
-                    BB
-                </div>
-                <div class="flex flex-col">
-                    <span class="font-bold text-lg text-slate-900 group-hover:text-dark-accent transition-colors">استاد
-                        بهمن بهرادفر</span>
-                    <span class="text-xs text-slate-500">آکادمی تخصصی آموزش زبان انگلیسی</span>
-                </div>
-            </a>
+    <!-- HEADER / NAVIGATION -->
+    <header
+        class="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-slate-100 shadow-sm transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
 
-            <nav class="hidden md:flex items-center gap-8 font-medium text-slate-600 text-sm">
-                <a href="#" class="hover:text-dark-accent transition-colors">صفحه اصلی</a>
-                <a href="#" class="hover:text-dark-accent transition-colors">درباره من</a>
-                <a href="#" class="hover:text-dark-accent transition-colors">تعیین سطح</a>
-                <a href="#" class="hover:text-dark-accent transition-colors">وبلاگ</a>
-                <a href="#" class="hover:text-dark-accent transition-colors">دانلودها</a>
-            </nav>
-
-            <div>
-                <a href="#"
-                    class="inline-flex items-center justify-center px-5 py-2.5 rounded-xl bg-dark-accent hover:bg-highlight text-white text-sm font-semibold transition-all shadow-md shadow-dark-accent/20 hover:shadow-lg">
-                    ورود / ثبت‌نام
+                <!-- Logo & Teacher Branding -->
+                <a href="index.html" class="flex items-center gap-3.5 group focus:outline-none"
+                    aria-label="صفحه اصلی وبسایت استاد بهمن بهرادفر">
+                    <div
+                        class="relative w-12 h-12 rounded-2xl bg-gradient-to-tr from-brand-500 via-brand-300 to-brand-100 p-0.5 shadow-md shadow-brand-500/20 group-hover:shadow-lg group-hover:shadow-brand-500/30 group-hover:scale-105 transition-all duration-300">
+                        <div
+                            class="w-full h-full bg-white rounded-[14px] flex items-center justify-center overflow-hidden">
+                            <img src="assets/images/logo.png" alt="لوگوی رسمی استاد بهمن بهرادفر"
+                                class="w-8 h-8 object-contain transition-transform duration-300 group-hover:scale-110"
+                                onerror="this.onerror=null; this.src='https://ui-avatars.com/api/?name=Bahman+Behradfar&background=F26419&color=fff&font-size=0.38&bold=true';">
+                        </div>
+                    </div>
+                    <div class="flex flex-col">
+                        <span
+                            class="text-lg font-black text-slate-900 tracking-tight group-hover:text-brand-500 transition-colors duration-200">بهمن
+                            بهرادفر</span>
+                        <span class="text-xs font-semibold text-brand-500 tracking-normal">مدرس ارشد زبان انگلیسی</span>
+                    </div>
                 </a>
+
+                <!-- Desktop Navigation Links -->
+                <nav
+                    class="hidden md:flex items-center gap-1 lg:gap-1.5 bg-slate-50/80 p-1.5 rounded-2xl border border-slate-100">
+                    <a href="index.html"
+                        class="px-4 py-2 rounded-xl text-sm font-bold text-brand-500 bg-white shadow-sm transition-all duration-200"
+                        aria-current="page">
+                        صفحه اصلی
+                    </a>
+                    <a href="about.html"
+                        class="px-4 py-2 rounded-xl text-sm font-medium text-slate-600 hover:text-brand-500 hover:bg-white/60 transition-all duration-200">
+                        درباره من
+                    </a>
+                    <a href="placement-test.html"
+                        class="px-4 py-2 rounded-xl text-sm font-medium text-slate-600 hover:text-brand-500 hover:bg-white/60 transition-all duration-200">
+                        تعیین سطح
+                    </a>
+                    <a href="blog.html"
+                        class="px-4 py-2 rounded-xl text-sm font-medium text-slate-600 hover:text-brand-500 hover:bg-white/60 transition-all duration-200">
+                        وبلاگ
+                    </a>
+                    <a href="downloads.html"
+                        class="px-4 py-2 rounded-xl text-sm font-medium text-slate-600 hover:text-brand-500 hover:bg-white/60 transition-all duration-200">
+                        دانلود فایل‌ها
+                    </a>
+                </nav>
+
+                <!-- Desktop CTA & Auth -->
+                <div class="flex items-center gap-2.5">
+                    <a href="login.html"
+                        class="hidden lg:inline-flex items-center gap-2 px-4 py-2.5 rounded-xl text-slate-700 text-sm font-bold hover:text-brand-500 hover:bg-slate-100/80 transition-all duration-200">
+                        <i class="fa-regular fa-user text-base text-brand-400"></i>
+                        <span>ورود / ثبت‌نام</span>
+                    </a>
+
+                    <a href="placement-test.html"
+                        class="hidden sm:inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-gradient-to-r from-brand-300 via-brand-400 to-brand-500 text-white text-sm font-bold shadow-md shadow-brand-500/25 hover:shadow-lg hover:shadow-brand-500/35 hover:-translate-y-0.5 active:translate-y-0 transition-all duration-200">
+                        <i class="fa-solid fa-graduation-cap text-base"></i>
+                        <span>تعیین سطح آنلاین</span>
+                    </a>
+                </div>
+
             </div>
         </div>
     </header>
+
+    <!-- APP-LIKE BOTTOM NAVIGATION (MOBILE & TABLET) -->
+    <div
+        class="fixed bottom-0 inset-x-0 z-50 md:hidden bg-white/95 backdrop-blur-lg border-t border-slate-200/80 shadow-[0_-4px_20px_rgba(0,0,0,0.08)] px-2 py-2">
+        <nav class="flex items-center justify-around max-w-md mx-auto">
+
+            <!-- ۱. صفحه اصلی -->
+            <a href="index.html" class="flex flex-col items-center gap-1 text-brand-500 transition-all duration-200">
+                <div class="w-10 h-8 rounded-full bg-brand-100/20 flex items-center justify-center">
+                    <i class="fa-solid fa-house text-base"></i>
+                </div>
+                <span class="text-[11px] font-bold">صفحه اصلی</span>
+            </a>
+
+            <!-- ۲. درباره من -->
+            <a href="about.html"
+                class="flex flex-col items-center gap-1 text-slate-500 hover:text-brand-500 transition-all duration-200">
+                <div class="w-10 h-8 rounded-full flex items-center justify-center">
+                    <i class="fa-solid fa-user-graduate text-base"></i>
+                </div>
+                <span class="text-[11px] font-medium">درباره من</span>
+            </a>
+
+            <!-- ۳. تعیین سطح -->
+            <a href="placement-test.html"
+                class="flex flex-col items-center gap-1 text-slate-500 hover:text-brand-500 transition-all duration-200">
+                <div class="w-10 h-8 rounded-full flex items-center justify-center">
+                    <i class="fa-solid fa-list-check text-base"></i>
+                </div>
+                <span class="text-[11px] font-medium">تعیین سطح</span>
+            </a>
+
+            <!-- ۴. وبلاگ -->
+            <a href="blog.html"
+                class="flex flex-col items-center gap-1 text-slate-500 hover:text-brand-500 transition-all duration-200">
+                <div class="w-10 h-8 rounded-full flex items-center justify-center">
+                    <i class="fa-solid fa-newspaper text-base"></i>
+                </div>
+                <span class="text-[11px] font-medium">وبلاگ</span>
+            </a>
+
+            <!-- ۵. دانلود فایل‌ها -->
+            <a href="downloads.html"
+                class="flex flex-col items-center gap-1 text-slate-500 hover:text-brand-500 transition-all duration-200">
+                <div class="w-10 h-8 rounded-full flex items-center justify-center">
+                    <i class="fa-solid fa-folder-open text-base"></i>
+                </div>
+                <span class="text-[11px] font-medium">دانلود فایل‌ها</span>
+            </a>
+
+        </nav>
+    </div>
 
     <!-- Main Content -->
     <main class="flex-grow flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
@@ -126,7 +217,8 @@
                     </div>
                     <!-- go to login password -->
                     <div>
-                        <a href="./password-login.html" class="text-sm text-orange-800 underline hover:no-underline"> ورود با رمز عبور </a>
+                        <a href="./password-login.html" class="text-sm text-orange-800 underline hover:no-underline">
+                            ورود با رمز عبور </a>
                     </div>
 
                     <!-- Submit Button Step 1 -->
