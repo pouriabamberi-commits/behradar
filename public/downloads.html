@@ -22,30 +22,7 @@
         integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-    <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    fontFamily: {
-                        sans: ['Vazirmatn', 'sans-serif'],
-                    },
-                    colors: {
-                        primary: '#F6AE2D',
-                        'primary-hover': '#F59C28',
-                        accent: '#F48923',
-                        highlight: '#F3771E',
-                        'dark-accent': '#F26419',
-                    }
-                }
-            }
-        }
-    </script>
-
-    <!-- AOS CSS -->
-    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
-
+    <!-- CSS Custom Properties & Tailwind Setup -->
     <style>
         .no-scrollbar::-webkit-scrollbar {
             display: none;
@@ -56,9 +33,17 @@
             scrollbar-width: none;
         }
     </style>
+
+    <!-- Tailwind CSS -->
+    <link rel="stylesheet" href="./styles/output.css">
+
+    <!-- AOS CSS -->
+    <link rel="stylesheet" href="./library/aos.css" />
+    <!-- JS Libraries -->
+    <script src="./library/aos.js"></script>
 </head>
 
-<body class="bg-slate-50 text-slate-800 font-sans antialiased min-h-screen flex flex-col justify-between">
+<body class="bg-slate-50 font-vazir text-slate-800 font-sans antialiased min-h-screen flex flex-col justify-between">
 
     <!-- HEADER / NAVIGATION -->
     <header
@@ -75,7 +60,7 @@
                             class="w-full h-full bg-white rounded-[14px] flex items-center justify-center overflow-hidden">
                             <img src="assets/images/logo.png" alt="لوگوی رسمی استاد بهمن بهرادفر"
                                 class="w-8 h-8 object-contain transition-transform duration-300 group-hover:scale-110"
-                                onerror="this.onerror=null; this.src='https://ui-avatars.com/api/?name=Bahman+Behradfar&background=F26419&color=fff&font-size=0.38&bold=true';">
+                                onerror="this.onerror=null; this.src='https://ui-avatars.com/api/?name=Bahman+Behradfar&background=0369a1&color=fff&font-size=0.38&bold=true';">
                         </div>
                     </div>
                     <div class="flex flex-col">
@@ -90,8 +75,7 @@
                 <nav
                     class="hidden md:flex items-center gap-1 lg:gap-1.5 bg-slate-50/80 p-1.5 rounded-2xl border border-slate-100">
                     <a href="index.html"
-                        class="px-4 py-2 rounded-xl text-sm font-bold text-brand-500 bg-white shadow-sm transition-all duration-200"
-                        aria-current="page">
+                        class="px-4 py-2 rounded-xl text-sm font-medium text-slate-600 hover:text-brand-500 hover:bg-white/60 transition-all duration-200">
                         صفحه اصلی
                     </a>
                     <a href="about.html"
@@ -107,7 +91,8 @@
                         وبلاگ
                     </a>
                     <a href="downloads.html"
-                        class="px-4 py-2 rounded-xl text-sm font-medium text-slate-600 hover:text-brand-500 hover:bg-white/60 transition-all duration-200">
+                        class="px-4 py-2 rounded-xl text-sm font-bold text-brand-500 bg-white shadow-sm transition-all duration-200"
+                        aria-current="page">
                         دانلود فایل‌ها
                     </a>
                 </nav>
@@ -130,13 +115,14 @@
             </div>
         </div>
     </header>
+
     <!-- APP-LIKE BOTTOM NAVIGATION (MOBILE & TABLET) -->
     <div
         class="fixed bottom-0 inset-x-0 z-50 md:hidden w-full bg-white/95 backdrop-blur-lg border-t border-slate-200 shadow-lg px-1 py-1.5">
         <nav class="flex items-center justify-around max-w-md mx-auto">
-            <a href="index.html" class="flex flex-col items-center gap-0.5 text-brand-500">
+            <a href="index.html" class="flex flex-col items-center gap-0.5 text-slate-500 hover:text-brand-500">
                 <i class="fa-solid fa-house text-base"></i>
-                <span class="text-[10px] font-bold">اصلی</span>
+                <span class="text-[10px] font-medium">اصلی</span>
             </a>
             <a href="about.html" class="flex flex-col items-center gap-0.5 text-slate-500 hover:text-brand-500">
                 <i class="fa-solid fa-user-graduate text-base"></i>
@@ -151,9 +137,9 @@
                 <i class="fa-solid fa-newspaper text-base"></i>
                 <span class="text-[10px] font-medium">وبلاگ</span>
             </a>
-            <a href="downloads.html" class="flex flex-col items-center gap-0.5 text-slate-500 hover:text-brand-500">
+            <a href="downloads.html" class="flex flex-col items-center gap-0.5 text-brand-500">
                 <i class="fa-solid fa-folder-open text-base"></i>
-                <span class="text-[10px] font-medium">دانلودها</span>
+                <span class="text-[10px] font-bold">دانلودها</span>
             </a>
         </nav>
     </div>
@@ -164,8 +150,7 @@
 
             <!-- Hero Title -->
             <div class="text-center mb-8" data-aos="fade-down">
-                <span
-                    class="inline-block px-4 py-1.5 rounded-full bg-primary/10 text-dark-accent text-xs font-bold mb-3">
+                <span class="inline-block px-4 py-1.5 rounded-full bg-brand-100 text-brand-500 text-xs font-bold mb-3">
                     Downloads Center
                 </span>
                 <h1 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mb-3">مرکز دانلود منابع و جزوات آموزشی
@@ -179,7 +164,7 @@
             <div class="max-w-2xl mx-auto mb-8" data-aos="fade-up">
                 <div class="relative">
                     <input type="text" id="searchInput" placeholder="جستجوی نام جزوه، پایه تحصیلی یا عنوان فایل..."
-                        class="w-full h-14 pr-12 pl-4 rounded-2xl bg-white border border-slate-200 focus:border-dark-accent focus:ring-4 focus:ring-primary/20 text-slate-800 text-sm transition-all shadow-sm">
+                        class="w-full h-14 pr-12 pl-4 rounded-2xl bg-white border border-slate-200 focus:border-brand-500 focus:ring-4 focus:ring-brand-500/20 text-slate-800 text-sm transition-all shadow-sm outline-none">
                     <div class="absolute right-4 top-1/2 -translate-y-1/2 text-slate-400">
                         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -197,7 +182,7 @@
                     <span class="text-xs font-bold text-slate-400 block mb-2 px-1">پایه‌های تحصیلی مدرسه:</span>
                     <div class="flex items-center gap-2 overflow-x-auto pb-2 no-scrollbar" id="schoolContainer">
                         <button data-cat="all"
-                            class="filter-btn active-btn px-4 py-2 rounded-xl text-xs font-bold whitespace-nowrap bg-dark-accent text-white shadow-md shadow-dark-accent/20">همه
+                            class="filter-btn active-btn px-4 py-2 rounded-xl text-xs font-bold whitespace-nowrap bg-brand-500 text-white shadow-md shadow-brand-500/20">همه
                             فایل‌ها</button>
                         <button data-cat="grade-7"
                             class="filter-btn px-4 py-2 rounded-xl text-xs font-bold whitespace-nowrap bg-white text-slate-600 border border-slate-200 hover:bg-slate-100">پایه
@@ -244,9 +229,345 @@
 
             </div>
 
-            <!-- Files Grid -->
+            <!-- Files Grid (Directly Rendered in HTML for SEO) -->
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="filesGrid">
-                <!-- فایل‌ها با JS رندر می‌شوند -->
+
+                <!-- File Item 1 -->
+                <div data-cat="grade-12" data-aos="fade-up"
+                    class="file-card bg-white rounded-3xl p-6 border border-slate-100 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between group">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="px-3 py-1 bg-brand-100 text-brand-500 text-xs font-bold rounded-lg">
+                                پایه دوازدهم
+                            </span>
+                            <span class="text-xs text-slate-400">۱۴۰۲/۱۱/۲۵</span>
+                        </div>
+                        <h3
+                            class="file-title text-slate-900 font-bold text-base leading-snug mb-3 group-hover:text-brand-500 transition-colors">
+                            جزوه کامل گرامر و واژگان زبان انگلیسی پایه دوازدهم
+                        </h3>
+                        <div class="flex items-center gap-4 text-xs text-slate-500 mb-6">
+                            <span>فرمت: <b>PDF</b></span>
+                            <span>حجم: <b>۴.۲ مگابایت</b></span>
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-2 gap-3 pt-4 border-t border-slate-100">
+                        <a href="https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf"
+                            target="_blank" rel="noopener noreferrer"
+                            class="inline-flex items-center justify-center gap-1 py-2.5 px-3 rounded-xl border border-slate-200 text-slate-700 hover:bg-slate-50 text-xs font-bold transition-all">
+                            <svg class="w-4 h-4 text-slate-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                            </svg>
+                            پیش‌نمایش آنلاین
+                        </a>
+                        <a href="https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf" download
+                            class="inline-flex items-center justify-center gap-1 py-2.5 px-3 rounded-xl bg-brand-500 hover:bg-brand-400 text-white text-xs font-bold transition-all shadow-md shadow-brand-500/20">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+                            </svg>
+                            دانلود مستقیم
+                        </a>
+                    </div>
+                </div>
+
+                <!-- File Item 2 -->
+                <div data-cat="grade-9" data-aos="fade-up"
+                    class="file-card bg-white rounded-3xl p-6 border border-slate-100 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between group">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="px-3 py-1 bg-brand-100 text-brand-500 text-xs font-bold rounded-lg">
+                                پایه نهم
+                            </span>
+                            <span class="text-xs text-slate-400">۱۴۰۲/۱۱/۲۰</span>
+                        </div>
+                        <h3
+                            class="file-title text-slate-900 font-bold text-base leading-snug mb-3 group-hover:text-brand-500 transition-colors">
+                            نمونه سوالات امتحانی نوبت دوم پایه نهم + پاسخ تشریحی
+                        </h3>
+                        <div class="flex items-center gap-4 text-xs text-slate-500 mb-6">
+                            <span>فرمت: <b>PDF</b></span>
+                            <span>حجم: <b>۲.۸ مگابایت</b></span>
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-2 gap-3 pt-4 border-t border-slate-100">
+                        <a href="https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf"
+                            target="_blank" rel="noopener noreferrer"
+                            class="inline-flex items-center justify-center gap-1 py-2.5 px-3 rounded-xl border border-slate-200 text-slate-700 hover:bg-slate-50 text-xs font-bold transition-all">
+                            <svg class="w-4 h-4 text-slate-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                            </svg>
+                            پیش‌نمایش آنلاین
+                        </a>
+                        <a href="https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf" download
+                            class="inline-flex items-center justify-center gap-1 py-2.5 px-3 rounded-xl bg-brand-500 hover:bg-brand-400 text-white text-xs font-bold transition-all shadow-md shadow-brand-500/20">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+                            </svg>
+                            دانلود مستقیم
+                        </a>
+                    </div>
+                </div>
+
+                <!-- File Item 3 -->
+                <div data-cat="reading" data-aos="fade-up"
+                    class="file-card bg-white rounded-3xl p-6 border border-slate-100 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between group">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="px-3 py-1 bg-brand-100 text-brand-500 text-xs font-bold rounded-lg">
+                                درک مطلب (Reading)
+                            </span>
+                            <span class="text-xs text-slate-400">۱۴۰۲/۱۱/۱۵</span>
+                        </div>
+                        <h3
+                            class="file-title text-slate-900 font-bold text-base leading-snug mb-3 group-hover:text-brand-500 transition-colors">
+                            کتابچه ۵۰ داستان کوتاه برای تقویت Reading و لغات
+                        </h3>
+                        <div class="flex items-center gap-4 text-xs text-slate-500 mb-6">
+                            <span>فرمت: <b>PDF</b></span>
+                            <span>حجم: <b>۶.۵ مگابایت</b></span>
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-2 gap-3 pt-4 border-t border-slate-100">
+                        <a href="https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf"
+                            target="_blank" rel="noopener noreferrer"
+                            class="inline-flex items-center justify-center gap-1 py-2.5 px-3 rounded-xl border border-slate-200 text-slate-700 hover:bg-slate-50 text-xs font-bold transition-all">
+                            <svg class="w-4 h-4 text-slate-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                            </svg>
+                            پیش‌نمایش آنلاین
+                        </a>
+                        <a href="https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf" download
+                            class="inline-flex items-center justify-center gap-1 py-2.5 px-3 rounded-xl bg-brand-500 hover:bg-brand-400 text-white text-xs font-bold transition-all shadow-md shadow-brand-500/20">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+                            </svg>
+                            دانلود مستقیم
+                        </a>
+                    </div>
+                </div>
+
+                <!-- File Item 4 -->
+                <div data-cat="listening" data-aos="fade-up"
+                    class="file-card bg-white rounded-3xl p-6 border border-slate-100 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between group">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="px-3 py-1 bg-brand-100 text-brand-500 text-xs font-bold rounded-lg">
+                                شنیداری (Listening)
+                            </span>
+                            <span class="text-xs text-slate-400">۱۴۰۲/۱۱/۱۰</span>
+                        </div>
+                        <h3
+                            class="file-title text-slate-900 font-bold text-base leading-snug mb-3 group-hover:text-brand-500 transition-colors">
+                            تمرینات شنیداری Listening سطح Intermediate به همراه فایل صوتی
+                        </h3>
+                        <div class="flex items-center gap-4 text-xs text-slate-500 mb-6">
+                            <span>فرمت: <b>ZIP / PDF</b></span>
+                            <span>حجم: <b>۱۲.۱ مگابایت</b></span>
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-2 gap-3 pt-4 border-t border-slate-100">
+                        <a href="https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf"
+                            target="_blank" rel="noopener noreferrer"
+                            class="inline-flex items-center justify-center gap-1 py-2.5 px-3 rounded-xl border border-slate-200 text-slate-700 hover:bg-slate-50 text-xs font-bold transition-all">
+                            <svg class="w-4 h-4 text-slate-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                            </svg>
+                            پیش‌نمایش آنلاین
+                        </a>
+                        <a href="https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf" download
+                            class="inline-flex items-center justify-center gap-1 py-2.5 px-3 rounded-xl bg-brand-500 hover:bg-brand-400 text-white text-xs font-bold transition-all shadow-md shadow-brand-500/20">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+                            </svg>
+                            دانلود مستقیم
+                        </a>
+                    </div>
+                </div>
+
+                <!-- File Item 5 -->
+                <div data-cat="writing" data-aos="fade-up"
+                    class="file-card bg-white rounded-3xl p-6 border border-slate-100 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between group">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="px-3 py-1 bg-brand-100 text-brand-500 text-xs font-bold rounded-lg">
+                                نگارش (Writing)
+                            </span>
+                            <span class="text-xs text-slate-400">۱۴۰۲/۱۱/۰۲</span>
+                        </div>
+                        <h3
+                            class="file-title text-slate-900 font-bold text-base leading-snug mb-3 group-hover:text-brand-500 transition-colors">
+                            راهنمای جامع ساختار جمله‌نویسی و Essay Writing
+                        </h3>
+                        <div class="flex items-center gap-4 text-xs text-slate-500 mb-6">
+                            <span>فرمت: <b>PDF</b></span>
+                            <span>حجم: <b>۳.۱ مگابایت</b></span>
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-2 gap-3 pt-4 border-t border-slate-100">
+                        <a href="https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf"
+                            target="_blank" rel="noopener noreferrer"
+                            class="inline-flex items-center justify-center gap-1 py-2.5 px-3 rounded-xl border border-slate-200 text-slate-700 hover:bg-slate-50 text-xs font-bold transition-all">
+                            <svg class="w-4 h-4 text-slate-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                            </svg>
+                            پیش‌نمایش آنلاین
+                        </a>
+                        <a href="https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf" download
+                            class="inline-flex items-center justify-center gap-1 py-2.5 px-3 rounded-xl bg-brand-500 hover:bg-brand-400 text-white text-xs font-bold transition-all shadow-md shadow-brand-500/20">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+                            </svg>
+                            دانلود مستقیم
+                        </a>
+                    </div>
+                </div>
+
+                <!-- File Item 6 -->
+                <div data-cat="speaking" data-aos="fade-up"
+                    class="file-card bg-white rounded-3xl p-6 border border-slate-100 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between group">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="px-3 py-1 bg-brand-100 text-brand-500 text-xs font-bold rounded-lg">
+                                گفتاری (Speaking)
+                            </span>
+                            <span class="text-xs text-slate-400">۱۴۰۲/۱۰/۲۸</span>
+                        </div>
+                        <h3
+                            class="file-title text-slate-900 font-bold text-base leading-snug mb-3 group-hover:text-brand-500 transition-colors">
+                            ۱۰۰ قالب آماده و الگوی مکالمه روزمره Speaking
+                        </h3>
+                        <div class="flex items-center gap-4 text-xs text-slate-500 mb-6">
+                            <span>فرمت: <b>PDF</b></span>
+                            <span>حجم: <b>۵.۰ مگابایت</b></span>
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-2 gap-3 pt-4 border-t border-slate-100">
+                        <a href="https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf"
+                            target="_blank" rel="noopener noreferrer"
+                            class="inline-flex items-center justify-center gap-1 py-2.5 px-3 rounded-xl border border-slate-200 text-slate-700 hover:bg-slate-50 text-xs font-bold transition-all">
+                            <svg class="w-4 h-4 text-slate-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                            </svg>
+                            پیش‌نمایش آنلاین
+                        </a>
+                        <a href="https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf" download
+                            class="inline-flex items-center justify-center gap-1 py-2.5 px-3 rounded-xl bg-brand-500 hover:bg-brand-400 text-white text-xs font-bold transition-all shadow-md shadow-brand-500/20">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+                            </svg>
+                            دانلود مستقیم
+                        </a>
+                    </div>
+                </div>
+
+                <!-- File Item 7 -->
+                <div data-cat="others" data-aos="fade-up"
+                    class="file-card bg-white rounded-3xl p-6 border border-slate-100 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between group">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="px-3 py-1 bg-brand-100 text-brand-500 text-xs font-bold rounded-lg">
+                                متفرقه / سایر
+                            </span>
+                            <span class="text-xs text-slate-400">۱۴۰۲/۱۰/۲۰</span>
+                        </div>
+                        <h3
+                            class="file-title text-slate-900 font-bold text-base leading-snug mb-3 group-hover:text-brand-500 transition-colors">
+                            جدول کامل افعال بی‌قاعده انگلیسی همراه با تلفظ
+                        </h3>
+                        <div class="flex items-center gap-4 text-xs text-slate-500 mb-6">
+                            <span>فرمت: <b>PDF</b></span>
+                            <span>حجم: <b>۱.۵ مگابایت</b></span>
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-2 gap-3 pt-4 border-t border-slate-100">
+                        <a href="https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf"
+                            target="_blank" rel="noopener noreferrer"
+                            class="inline-flex items-center justify-center gap-1 py-2.5 px-3 rounded-xl border border-slate-200 text-slate-700 hover:bg-slate-50 text-xs font-bold transition-all">
+                            <svg class="w-4 h-4 text-slate-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                            </svg>
+                            پیش‌نمایش آنلاین
+                        </a>
+                        <a href="https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf" download
+                            class="inline-flex items-center justify-center gap-1 py-2.5 px-3 rounded-xl bg-brand-500 hover:bg-brand-400 text-white text-xs font-bold transition-all shadow-md shadow-brand-500/20">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+                            </svg>
+                            دانلود مستقیم
+                        </a>
+                    </div>
+                </div>
+
+                <!-- File Item 8 -->
+                <div data-cat="grade-7" data-aos="fade-up"
+                    class="file-card bg-white rounded-3xl p-6 border border-slate-100 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between group">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="px-3 py-1 bg-brand-100 text-brand-500 text-xs font-bold rounded-lg">
+                                پایه هفتم
+                            </span>
+                            <span class="text-xs text-slate-400">۱۴۰۲/۱۰/۱۵</span>
+                        </div>
+                        <h3
+                            class="file-title text-slate-900 font-bold text-base leading-snug mb-3 group-hover:text-brand-500 transition-colors">
+                            خلاصه نکات گرامری لسن ۱ تا ۴ پایه هفتم
+                        </h3>
+                        <div class="flex items-center gap-4 text-xs text-slate-500 mb-6">
+                            <span>فرمت: <b>PDF</b></span>
+                            <span>حجم: <b>۱.۸ مگابایت</b></span>
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-2 gap-3 pt-4 border-t border-slate-100">
+                        <a href="https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf"
+                            target="_blank" rel="noopener noreferrer"
+                            class="inline-flex items-center justify-center gap-1 py-2.5 px-3 rounded-xl border border-slate-200 text-slate-700 hover:bg-slate-50 text-xs font-bold transition-all">
+                            <svg class="w-4 h-4 text-slate-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                            </svg>
+                            پیش‌نمایش آنلاین
+                        </a>
+                        <a href="https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf" download
+                            class="inline-flex items-center justify-center gap-1 py-2.5 px-3 rounded-xl bg-brand-500 hover:bg-brand-400 text-white text-xs font-bold transition-all shadow-md shadow-brand-500/20">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+                            </svg>
+                            دانلود مستقیم
+                        </a>
+                    </div>
+                </div>
+
             </div>
 
             <!-- Empty State -->
@@ -262,200 +583,72 @@
     <!-- Footer -->
     <footer class="bg-slate-900 text-slate-400 py-8 border-t border-slate-800 text-xs text-center">
         <div class="max-w-7xl mx-auto px-4">
-            <p>کلیه حقوق مادی و معنوی این وب‌سایت متعلق به **استاد بهمن بهرادفر** می‌باشد.</p>
+            <p>کلیه حقوق مادی و معنوی این وب‌سایت متعلق به <strong>استاد بهمن بهرادفر</strong> می‌باشد.</p>
         </div>
     </footer>
 
-    <!-- JS Libraries -->
-    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
 
-    <!-- Vanilla JavaScript -->
+
+    <!-- DOM Filtering & Search Script -->
     <script>
         AOS.init({ duration: 800, once: true });
-
-        // نمونه فایل‌های آموزشی
-        const fileList = [
-            {
-                id: 1,
-                title: 'جزوه کامل گرامر و واژگان زبان انگلیسی پایه دوازدهم',
-                category: 'grade-12',
-                size: '۴.۲ مگابایت',
-                format: 'PDF',
-                date: '۱۴۰۲/۱۱/۲۵',
-                pdfUrl: 'https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf'
-            },
-            {
-                id: 2,
-                title: 'نمونه سوالات امتحانی نوبت دوم پایه نهم + پاسخ تشریحی',
-                category: 'grade-9',
-                size: '۲.۸ مگابایت',
-                format: 'PDF',
-                date: '۱۴۰۲/۱۱/۲۰',
-                pdfUrl: 'https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf'
-            },
-            {
-                id: 3,
-                title: 'کتابچه ۵۰ داستان کوتاه برای تقویت Reading و لغات',
-                category: 'reading',
-                size: '۶.۵ مگابایت',
-                format: 'PDF',
-                date: '۱۴۰۲/۱۱/۱۵',
-                pdfUrl: 'https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf'
-            },
-            {
-                id: 4,
-                title: 'تمرینات شنیداری Listening سطح Intermediate به همراه فایل صوتی',
-                category: 'listening',
-                size: '۱۲.۱ مگابایت',
-                format: 'ZIP / PDF',
-                date: '۱۴۰۲/۱۱/۱۰',
-                pdfUrl: 'https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf'
-            },
-            {
-                id: 5,
-                title: 'راهنمای جامع ساختار جمله‌نویسی و Essay Writing',
-                category: 'writing',
-                size: '۳.۱ مگابایت',
-                format: 'PDF',
-                date: '۱۴۰۲/۱۱/۰۲',
-                pdfUrl: 'https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf'
-            },
-            {
-                id: 6,
-                title: '۱۰۰ قالب آماده و الگوی مکالمه روزمره Speaking',
-                category: 'speaking',
-                size: '۵.۰ مگابایت',
-                format: 'PDF',
-                date: '۱۴۰۲/۱۰/۲۸',
-                pdfUrl: 'https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf'
-            },
-            {
-                id: 7,
-                title: 'جدول کامل افعال بی‌قاعده انگلیسی همراه با تلفظ',
-                category: 'others',
-                size: '۱.۵ مگابایت',
-                format: 'PDF',
-                date: '۱۴۰۲/۱۰/۲۰',
-                pdfUrl: 'https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf'
-            },
-            {
-                id: 8,
-                title: 'خلاصه نکات گرامری لسن ۱ تا ۴ پایه هفتم',
-                category: 'grade-7',
-                size: '۱.۸ مگابایت',
-                format: 'PDF',
-                date: '۱۴۰۲/۱۰/۱۵',
-                pdfUrl: 'https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf'
-            }
-        ];
 
         let currentCategory = 'all';
         let searchQuery = '';
 
-        const categoryNames = {
-            'grade-7': 'پایه هفتم',
-            'grade-8': 'پایه هشتم',
-            'grade-9': 'پایه نهم',
-            'grade-10': 'پایه دهم',
-            'grade-11': 'پایه یازدهم',
-            'grade-12': 'پایه دوازدهم',
-            'reading': 'درک مطلب (Reading)',
-            'listening': 'شنیداری (Listening)',
-            'speaking': 'گفتاری (Speaking)',
-            'writing': 'نگارش (Writing)',
-            'others': 'متفرقه / سایر'
-        };
-
-        const filesGrid = document.getElementById('filesGrid');
         const emptyState = document.getElementById('emptyState');
         const searchInput = document.getElementById('searchInput');
         const filterBtns = document.querySelectorAll('.filter-btn');
+        const fileCards = document.querySelectorAll('.file-card');
 
-        // رندر کارت‌های فایل
-        function renderFiles() {
-            const filtered = fileList.filter(file => {
-                const matchesCategory = currentCategory === 'all' || file.category === currentCategory;
-                const matchesSearch = file.title.toLowerCase().includes(searchQuery.toLowerCase());
-                return matchesCategory && matchesSearch;
+        function filterFiles() {
+            let visibleCount = 0;
+
+            fileCards.forEach(card => {
+                const category = card.getAttribute('data-cat');
+                const title = card.querySelector('.file-title').textContent.toLowerCase();
+
+                const matchesCategory = currentCategory === 'all' || category === currentCategory;
+                const matchesSearch = title.includes(searchQuery.toLowerCase());
+
+                if (matchesCategory && matchesSearch) {
+                    card.classList.remove('hidden');
+                    visibleCount++;
+                } else {
+                    card.classList.add('hidden');
+                }
             });
 
-            filesGrid.innerHTML = '';
-
-            if (filtered.length === 0) {
+            if (visibleCount === 0) {
                 emptyState.classList.remove('hidden');
             } else {
                 emptyState.classList.add('hidden');
-                filtered.forEach(file => {
-                    const cardHtml = `
-                        <div data-aos="fade-up" class="bg-white rounded-3xl p-6 border border-slate-100 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between group">
-                            <div>
-                                <div class="flex items-center justify-between mb-4">
-                                    <span class="px-3 py-1 bg-primary/10 text-dark-accent text-xs font-bold rounded-lg">
-                                        ${categoryNames[file.category] || 'عمومی'}
-                                    </span>
-                                    <span class="text-xs text-slate-400">${file.date}</span>
-                                </div>
-                                <h3 class="text-slate-900 font-bold text-base leading-snug mb-3 group-hover:text-dark-accent transition-colors">
-                                    ${file.title}
-                                </h3>
-                                <div class="flex items-center gap-4 text-xs text-slate-500 mb-6">
-                                    <span>فرمت: <b>${file.format}</b></span>
-                                    <span>حجم: <b>${file.size}</b></span>
-                                </div>
-                            </div>
-
-                            <div class="grid grid-cols-2 gap-3 pt-4 border-t border-slate-100">
-                                <!-- باز کردن پیش‌نمایش PDF در تب جدید -->
-                                <a href="${file.pdfUrl}" target="_blank" rel="noopener noreferrer" 
-                                   class="inline-flex items-center justify-center gap-1 py-2.5 px-3 rounded-xl border border-slate-200 text-slate-700 hover:bg-slate-50 text-xs font-bold transition-all">
-                                    <svg class="w-4 h-4 text-slate-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/>
-                                    </svg>
-                                    پیش‌نمایش آنلاین
-                                </a>
-
-                                <!-- دانلود مستقیم -->
-                                <a href="${file.pdfUrl}" download
-                                   class="inline-flex items-center justify-center gap-1 py-2.5 px-3 rounded-xl bg-dark-accent hover:bg-highlight text-white text-xs font-bold transition-all shadow-md shadow-dark-accent/20">
-                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/>
-                                    </svg>
-                                    دانلود مستقیم
-                                </a>
-                            </div>
-                        </div>
-                    `;
-                    filesGrid.insertAdjacentHTML('beforeend', cardHtml);
-                });
-                AOS.refresh();
             }
+
+            AOS.refresh();
         }
 
-        // جستجو
+        // رویداد تایپ در کادر جستجو
         searchInput.addEventListener('input', (e) => {
-            searchQuery = e.target.value;
-            renderFiles();
+            searchQuery = e.target.value.trim();
+            filterFiles();
         });
 
-        // دکمه‌های فیلتر
+        // رویداد کلیک روی دکمه‌های فیلتر
         filterBtns.forEach(btn => {
             btn.addEventListener('click', () => {
                 filterBtns.forEach(b => {
-                    b.classList.remove('bg-dark-accent', 'text-white', 'shadow-md', 'shadow-dark-accent/20');
+                    b.classList.remove('bg-brand-500', 'text-white', 'shadow-md', 'shadow-brand-500/20');
                     b.classList.add('bg-white', 'text-slate-600', 'border', 'border-slate-200');
                 });
 
                 btn.classList.remove('bg-white', 'text-slate-600', 'border', 'border-slate-200');
-                btn.classList.add('bg-dark-accent', 'text-white', 'shadow-md', 'shadow-dark-accent/20');
+                btn.classList.add('bg-brand-500', 'text-white', 'shadow-md', 'shadow-brand-500/20');
 
                 currentCategory = btn.getAttribute('data-cat');
-                renderFiles();
+                filterFiles();
             });
         });
-
-        // رندر اولیه
-        renderFiles();
     </script>
 </body>
 

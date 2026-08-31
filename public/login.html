@@ -20,44 +20,13 @@
         integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
 
+
     <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    fontFamily: {
-                        sans: ['Vazirmatn', 'sans-serif'],
-                    },
-                    colors: {
-                        primary: '#F6AE2D',
-                        'primary-hover': '#F59C28',
-                        accent: '#F48923',
-                        highlight: '#F3771E',
-                        'dark-accent': '#F26419',
-                    }
-                }
-            }
-        }
-    </script>
+    <link rel="stylesheet" href="./styles/output.css">
 
-    <!-- AOS CSS -->
-    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
-    <!-- SweetAlert2 CSS -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
-
-    <style>
-        /* استایل اختصاصی برای خطا‌های JustValidate */
-        .just-validate-error-label {
-            color: #ef4444 !important;
-            font-size: 0.75rem !important;
-            margin-top: 0.375rem !important;
-            display: block !important;
-        }
-    </style>
 </head>
 
-<body class="bg-slate-50 text-slate-800 font-sans antialiased min-h-screen flex flex-col justify-between">
+<body class="bg-slate-50 font-vazir text-slate-800 font-sans antialiased min-h-screen flex flex-col justify-between">
 
     <!-- HEADER / NAVIGATION -->
     <header
@@ -74,7 +43,7 @@
                             class="w-full h-full bg-white rounded-[14px] flex items-center justify-center overflow-hidden">
                             <img src="assets/images/logo.png" alt="لوگوی رسمی استاد بهمن بهرادفر"
                                 class="w-8 h-8 object-contain transition-transform duration-300 group-hover:scale-110"
-                                onerror="this.onerror=null; this.src='https://ui-avatars.com/api/?name=Bahman+Behradfar&background=F26419&color=fff&font-size=0.38&bold=true';">
+                                onerror="this.onerror=null; this.src='https://ui-avatars.com/api/?name=Bahman+Behradfar&background=0369a1&color=fff&font-size=0.38&bold=true';">
                         </div>
                     </div>
                     <div class="flex flex-col">
@@ -89,8 +58,7 @@
                 <nav
                     class="hidden md:flex items-center gap-1 lg:gap-1.5 bg-slate-50/80 p-1.5 rounded-2xl border border-slate-100">
                     <a href="index.html"
-                        class="px-4 py-2 rounded-xl text-sm font-bold text-brand-500 bg-white shadow-sm transition-all duration-200"
-                        aria-current="page">
+                        class="px-4 py-2 rounded-xl text-sm font-medium text-slate-600 hover:text-brand-500 hover:bg-white/60 transition-all duration-200">
                         صفحه اصلی
                     </a>
                     <a href="about.html"
@@ -114,7 +82,7 @@
                 <!-- Desktop CTA & Auth -->
                 <div class="flex items-center gap-2.5">
                     <a href="login.html"
-                        class="hidden lg:inline-flex items-center gap-2 px-4 py-2.5 rounded-xl text-slate-700 text-sm font-bold hover:text-brand-500 hover:bg-slate-100/80 transition-all duration-200">
+                        class="hidden lg:inline-flex items-center gap-2 px-4 py-2.5 rounded-xl text-brand-500 text-sm font-bold bg-slate-100/80 transition-all duration-200">
                         <i class="fa-regular fa-user text-base text-brand-400"></i>
                         <span>ورود / ثبت‌نام</span>
                     </a>
@@ -129,13 +97,14 @@
             </div>
         </div>
     </header>
+
     <!-- APP-LIKE BOTTOM NAVIGATION (MOBILE & TABLET) -->
     <div
         class="fixed bottom-0 inset-x-0 z-50 md:hidden w-full bg-white/95 backdrop-blur-lg border-t border-slate-200 shadow-lg px-1 py-1.5">
         <nav class="flex items-center justify-around max-w-md mx-auto">
-            <a href="index.html" class="flex flex-col items-center gap-0.5 text-brand-500">
+            <a href="index.html" class="flex flex-col items-center gap-0.5 text-slate-500 hover:text-brand-500">
                 <i class="fa-solid fa-house text-base"></i>
-                <span class="text-[10px] font-bold">اصلی</span>
+                <span class="text-[10px] font-medium">اصلی</span>
             </a>
             <a href="about.html" class="flex flex-col items-center gap-0.5 text-slate-500 hover:text-brand-500">
                 <i class="fa-solid fa-user-graduate text-base"></i>
@@ -160,12 +129,12 @@
     <!-- Main Content -->
     <main class="flex-grow flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
         <div class="w-full max-w-md bg-white rounded-3xl p-8 sm:p-10 shadow-xl shadow-slate-200/60 border border-slate-100"
-            data-aos="zoom-in">
+            >
 
             <!-- Title Header -->
             <div class="text-center mb-8">
                 <div
-                    class="w-16 h-16 mx-auto mb-4 rounded-2xl bg-primary/10 flex items-center justify-center text-dark-accent">
+                    class="w-16 h-16 mx-auto mb-4 rounded-2xl bg-brand-100 flex items-center justify-center text-brand-500">
                     <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                             d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
@@ -185,7 +154,7 @@
                         <label for="fullName" class="block text-xs font-bold text-slate-700 mb-2">نام و نام
                             خانوادگی</label>
                         <input type="text" id="fullName" name="fullName" placeholder="مثال: علی محمدی"
-                            class="w-full h-12 px-4 rounded-xl bg-slate-50 border border-slate-200 focus:bg-white focus:border-dark-accent focus:ring-4 focus:ring-primary/20 text-slate-800 text-sm transition-all outline-none">
+                            class="w-full h-12 px-4 rounded-xl bg-slate-50 border border-slate-200 focus:bg-white focus:border-brand-500 focus:ring-4 focus:ring-brand-500/20 text-slate-800 text-sm transition-all outline-none">
                     </div>
 
                     <!-- Phone Number Input -->
@@ -193,17 +162,17 @@
                         <label for="phoneNumber" class="block text-xs font-bold text-slate-700 mb-2">شماره
                             موبایل</label>
                         <input type="tel" id="phoneNumber" name="phoneNumber" placeholder="۰۹۱۲۳۴۵۶۷۸۹" dir="ltr"
-                            class="w-full h-12 px-4 rounded-xl bg-slate-50 border border-slate-200 focus:bg-white focus:border-dark-accent focus:ring-4 focus:ring-primary/20 text-slate-800 text-sm text-right transition-all outline-none">
+                            class="w-full h-12 px-4 rounded-xl bg-slate-50 border border-slate-200 focus:bg-white focus:border-brand-500 focus:ring-4 focus:ring-brand-500/20 text-slate-800 text-sm text-right transition-all outline-none">
                     </div>
                     <!-- go to login password -->
                     <div>
-                        <a href="./password-login.html" class="text-sm text-orange-800 underline hover:no-underline">
+                        <a href="./password-login.html" class="text-sm text-brand-500 underline hover:no-underline">
                             ورود با رمز عبور </a>
                     </div>
 
                     <!-- Submit Button Step 1 -->
                     <button type="submit" id="btnSendCode"
-                        class="w-full h-12 rounded-xl bg-dark-accent hover:bg-highlight text-white text-sm font-bold transition-all shadow-md shadow-dark-accent/20 hover:shadow-lg flex items-center justify-center gap-2">
+                        class="w-full h-12 rounded-xl bg-brand-500 hover:bg-brand-400 text-white text-sm font-bold transition-all shadow-md shadow-brand-500/20 hover:shadow-lg flex items-center justify-center gap-2">
                         <span>ارسال کد تایید</span>
                         <svg class="w-4 h-4 rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -219,10 +188,10 @@
                             <label for="otpCode" class="block text-xs font-bold text-slate-700">کد تایید
                                 ارسال‌شده</label>
                             <button type="button" id="btnEditInfo"
-                                class="text-[11px] font-bold text-dark-accent hover:underline">ویرایش اطلاعات</button>
+                                class="text-[11px] font-bold text-brand-500 hover:underline">ویرایش اطلاعات</button>
                         </div>
                         <input type="text" id="otpCode" name="otpCode" placeholder="- - - - - -" maxlength="6" dir="ltr"
-                            class="w-full h-12 px-4 text-center tracking-widest font-bold text-lg rounded-xl bg-slate-50 border border-slate-200 focus:bg-white focus:border-dark-accent focus:ring-4 focus:ring-primary/20 text-slate-800 transition-all outline-none">
+                            class="w-full h-12 px-4 text-center tracking-widest font-bold text-lg rounded-xl bg-slate-50 border border-slate-200 focus:bg-white focus:border-brand-500 focus:ring-4 focus:ring-brand-500/20 text-slate-800 transition-all outline-none">
                     </div>
 
                     <!-- Confirm Button Step 2 -->
@@ -240,129 +209,9 @@
     <!-- Footer -->
     <footer class="bg-slate-900 text-slate-400 py-8 border-t border-slate-800 text-xs text-center">
         <div class="max-w-7xl mx-auto px-4">
-            <p>کلیه حقوق مادی و معنوی این وب‌سایت متعلق به **استاد بهمن بهرادفر** می‌باشد.</p>
+            <p>کلیه حقوق مادی و معنوی این وب‌سایت متعلق به <strong>استاد بهمن بهرادفر</strong> می‌باشد.</p>
         </div>
     </footer>
-
-    <!-- JS Libraries -->
-    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <script src="https://unpkg.com/just-validate@latest/dist/just-validate.production.min.js"></script>
-
-    <!-- Page Logic -->
-    <script>
-        AOS.init({ duration: 800, once: true });
-
-        const form = document.querySelector('#authForm');
-        const step1Container = document.getElementById('step1Container');
-        const step2Container = document.getElementById('step2Container');
-        const stepDescription = document.getElementById('stepDescription');
-        const btnEditInfo = document.getElementById('btnEditInfo');
-        const btnVerifyCode = document.getElementById('btnVerifyCode');
-        const otpInput = document.getElementById('otpCode');
-
-        // پیکربندی JustValidate
-        const validator = new JustValidate('#authForm', {
-            errorFieldCssClass: 'border-red-500',
-            errorLabelCssClass: 'just-validate-error-label',
-            focusInvalidField: true,
-            lockForm: true,
-        });
-
-        validator
-            .addField('#fullName', [
-                {
-                    rule: 'required',
-                    errorMessage: 'لطفاً نام و نام خانوادگی خود را وارد کنید.',
-                },
-                {
-                    rule: 'minLength',
-                    value: 3,
-                    errorMessage: 'نام باید حداقل شامل ۳ حرف باشد.',
-                },
-            ])
-            .addField('#phoneNumber', [
-                {
-                    rule: 'required',
-                    errorMessage: 'لطفاً شماره موبایل خود را وارد کنید.',
-                },
-                {
-                    rule: 'customRegexp',
-                    value: /^09\d{9}$/,
-                    errorMessage: 'شماره موبایل وارد شده معتبر نیست (مثال: 09123456789).',
-                },
-            ])
-            .onSuccess((event) => {
-                // مرحله اول: ارسال موفقیت‌آمیز کد تایید
-                Swal.fire({
-                    title: 'در حال ارسال کد...',
-                    text: 'لطفاً چند لحظه شکیبا باشید.',
-                    icon: 'info',
-                    showConfirmButton: false,
-                    allowOutsideClick: false,
-                    didOpen: () => {
-                        Swal.showLoading();
-                        setTimeout(() => {
-                            Swal.fire({
-                                icon: 'success',
-                                title: 'کد تایید ارسال شد',
-                                text: 'کد ۶ رقمی تایید به شماره موبایل شما پیامک گردید.',
-                                confirmButtonText: 'متوجه شدم',
-                                confirmButtonColor: '#F26419'
-                            });
-
-                            // نمایش باکس مرحله دوم (کد OTP)
-                            step1Container.classList.add('opacity-60', 'pointer-events-none');
-                            step2Container.classList.remove('hidden');
-                            stepDescription.innerText = 'کد ارسال شده به شماره خود را در باکس زیر وارد کنید';
-                            otpInput.focus();
-                        }, 1200);
-                    }
-                });
-            });
-
-        // بازگشت به مرحله اول (ویرایش اطلاعات)
-        btnEditInfo.addEventListener('click', () => {
-            step1Container.classList.remove('opacity-60', 'pointer-events-none');
-            step2Container.classList.add('hidden');
-            stepDescription.innerText = 'برای ورود یا عضویت، مشخصات خود را وارد کنید';
-            otpInput.value = '';
-        });
-
-        // دکمه تایید نهایی کد OTP
-        btnVerifyCode.addEventListener('click', () => {
-            const val = otpInput.value.trim();
-            if (!val || val.length < 4) {
-                Swal.fire({
-                    icon: 'error',
-                    title: 'خطا در ورود کد',
-                    text: 'لطفاً کد تایید را به صورت کامل وارد کنید.',
-                    confirmButtonText: 'تلاش مجدد',
-                    confirmButtonColor: '#F26419'
-                });
-                return;
-            }
-
-            Swal.fire({
-                title: 'در حال اعتبارسنجی...',
-                icon: 'info',
-                showConfirmButton: false,
-                allowOutsideClick: false,
-                didOpen: () => {
-                    Swal.showLoading();
-                    setTimeout(() => {
-                        Swal.fire({
-                            icon: 'success',
-                            title: 'ورود با موفقیت انجام شد',
-                            text: 'خوش آمدید! در حال انتقال به پنل کاربری...',
-                            timer: 2000,
-                            showConfirmButton: false
-                        });
-                    }, 1000);
-                }
-            });
-        });
-    </script>
 </body>
 
 </html>

@@ -21,31 +21,9 @@
         integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-    <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    fontFamily: {
-                        sans: ['Vazirmatn', 'sans-serif'],
-                    },
-                    colors: {
-                        primary: '#F6AE2D',
-                        'primary-hover': '#F59C28',
-                        accent: '#F48923',
-                        highlight: '#F3771E',
-                        'dark-accent': '#F26419',
-                    }
-                }
-            }
-        }
-    </script>
-
-    <!-- AOS CSS -->
-    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
-
+    <!-- CSS Custom Properties & Tailwind Setup -->
     <style>
+
         .no-scrollbar::-webkit-scrollbar {
             display: none;
         }
@@ -55,6 +33,16 @@
             scrollbar-width: none;
         }
     </style>
+
+    <!-- Tailwind CSS -->
+    <link rel="stylesheet" href="./styles/output.css">
+
+    <!-- AOS CSS -->
+    <link rel="stylesheet" href="./library/aos.css" />
+
+    
+    <!-- JS Libraries -->
+    <script defer src="./library/aos.js"></script>
 </head>
 
 <body class="bg-slate-50 text-slate-800 font-sans antialiased min-h-screen flex flex-col justify-between">
@@ -74,7 +62,7 @@
                             class="w-full h-full bg-white rounded-[14px] flex items-center justify-center overflow-hidden">
                             <img src="assets/images/logo.png" alt="لوگوی رسمی استاد بهمن بهرادفر"
                                 class="w-8 h-8 object-contain transition-transform duration-300 group-hover:scale-110"
-                                onerror="this.onerror=null; this.src='https://ui-avatars.com/api/?name=Bahman+Behradfar&background=F26419&color=fff&font-size=0.38&bold=true';">
+                                onerror="this.onerror=null; this.src='https://ui-avatars.com/api/?name=Bahman+Behradfar&background=0369a1&color=fff&font-size=0.38&bold=true';">
                         </div>
                     </div>
                     <div class="flex flex-col">
@@ -89,8 +77,7 @@
                 <nav
                     class="hidden md:flex items-center gap-1 lg:gap-1.5 bg-slate-50/80 p-1.5 rounded-2xl border border-slate-100">
                     <a href="index.html"
-                        class="px-4 py-2 rounded-xl text-sm font-bold text-brand-500 bg-white shadow-sm transition-all duration-200"
-                        aria-current="page">
+                        class="px-4 py-2 rounded-xl text-sm font-medium text-slate-600 hover:text-brand-500 hover:bg-white/60 transition-all duration-200">
                         صفحه اصلی
                     </a>
                     <a href="about.html"
@@ -102,7 +89,8 @@
                         تعیین سطح
                     </a>
                     <a href="blog.html"
-                        class="px-4 py-2 rounded-xl text-sm font-medium text-slate-600 hover:text-brand-500 hover:bg-white/60 transition-all duration-200">
+                        class="px-4 py-2 rounded-xl text-sm font-bold text-brand-500 bg-white shadow-sm transition-all duration-200"
+                        aria-current="page">
                         وبلاگ
                     </a>
                     <a href="downloads.html"
@@ -129,13 +117,14 @@
             </div>
         </div>
     </header>
+
     <!-- APP-LIKE BOTTOM NAVIGATION (MOBILE & TABLET) -->
     <div
         class="fixed bottom-0 inset-x-0 z-50 md:hidden w-full bg-white/95 backdrop-blur-lg border-t border-slate-200 shadow-lg px-1 py-1.5">
         <nav class="flex items-center justify-around max-w-md mx-auto">
-            <a href="index.html" class="flex flex-col items-center gap-0.5 text-brand-500">
+            <a href="index.html" class="flex flex-col items-center gap-0.5 text-slate-500 hover:text-brand-500">
                 <i class="fa-solid fa-house text-base"></i>
-                <span class="text-[10px] font-bold">اصلی</span>
+                <span class="text-[10px] font-medium">اصلی</span>
             </a>
             <a href="about.html" class="flex flex-col items-center gap-0.5 text-slate-500 hover:text-brand-500">
                 <i class="fa-solid fa-user-graduate text-base"></i>
@@ -146,9 +135,9 @@
                 <i class="fa-solid fa-list-check text-base"></i>
                 <span class="text-[10px] font-medium">تعیین سطح</span>
             </a>
-            <a href="blog.html" class="flex flex-col items-center gap-0.5 text-slate-500 hover:text-brand-500">
+            <a href="blog.html" class="flex flex-col items-center gap-0.5 text-brand-500">
                 <i class="fa-solid fa-newspaper text-base"></i>
-                <span class="text-[10px] font-medium">وبلاگ</span>
+                <span class="text-[10px] font-bold">وبلاگ</span>
             </a>
             <a href="downloads.html" class="flex flex-col items-center gap-0.5 text-slate-500 hover:text-brand-500">
                 <i class="fa-solid fa-folder-open text-base"></i>
@@ -156,6 +145,7 @@
             </a>
         </nav>
     </div>
+
     <!-- Main Content -->
     <main class="flex-grow py-8 sm:py-12 px-4 sm:px-6 lg:px-8">
         <div class="max-w-7xl mx-auto">
@@ -163,7 +153,7 @@
             <!-- Hero Title -->
             <div class="text-center mb-8" data-aos="fade-down">
                 <span
-                    class="inline-block px-4 py-1.5 rounded-full bg-primary/10 text-dark-accent text-xs font-bold mb-3">
+                    class="inline-block px-4 py-1.5 rounded-full bg-brand-100 text-brand-500 text-xs font-bold mb-3">
                     Blog & Articles
                 </span>
                 <h1 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mb-3">وبلاگ و مقالات آموزشی زبان انگلیسی
@@ -179,7 +169,7 @@
                 <!-- Search Box -->
                 <div class="relative">
                     <input type="text" id="searchInput" placeholder="جستجو در مقالات، گرامر، آیلتس..."
-                        class="w-full h-14 pr-12 pl-4 rounded-2xl bg-white border border-slate-200 focus:border-dark-accent focus:ring-4 focus:ring-primary/20 text-slate-800 text-sm transition-all shadow-sm">
+                        class="w-full h-14 pr-12 pl-4 rounded-2xl bg-white border border-slate-200 focus:border-brand-500 focus:ring-4 focus:ring-brand-500/20 text-slate-800 text-sm transition-all shadow-sm outline-none">
                     <div class="absolute right-4 top-1/2 -translate-y-1/2 text-slate-400">
                         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -192,7 +182,7 @@
                 <div class="flex items-center justify-start sm:justify-center gap-2 overflow-x-auto pb-2 no-scrollbar"
                     id="categoryContainer">
                     <button data-category="all"
-                        class="filter-btn active-btn px-5 py-2.5 rounded-xl text-xs sm:text-sm font-bold whitespace-nowrap transition-all bg-dark-accent text-white shadow-md shadow-dark-accent/20">
+                        class="filter-btn active-btn px-5 py-2.5 rounded-xl text-xs sm:text-sm font-bold whitespace-nowrap transition-all bg-brand-500 text-white shadow-md shadow-brand-500/20">
                         همه مقالات
                     </button>
                     <button data-category="grammar"
@@ -214,9 +204,231 @@
                 </div>
             </div>
 
-            <!-- Blog Grid -->
+            <!-- Blog Grid (Directly Rendered in HTML for SEO & Fast Initial Paint) -->
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8" id="postsGrid">
-                <!-- مقالات با JS رندر می‌شوند -->
+                
+                <!-- Post 1 -->
+                <article data-category="grammar" data-aos="fade-up"
+                    class="post-card bg-white rounded-3xl overflow-hidden border border-slate-100 shadow-md hover:shadow-xl transition-all duration-300 flex flex-col group">
+                    <div class="relative h-48 sm:h-52 overflow-hidden bg-slate-100">
+                        <img src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=600&q=80"
+                            alt="۱۰ تکنیک طلایی برای یادگیری سریع گرامر زبان انگلیسی"
+                            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <span class="absolute top-4 right-4 px-3 py-1 bg-brand-500 text-white text-xs font-bold rounded-lg shadow-md">
+                            گرامر
+                        </span>
+                    </div>
+                    <div class="p-6 flex flex-col flex-grow justify-between">
+                        <div>
+                            <div class="flex items-center gap-3 text-xs text-slate-400 mb-3">
+                                <span>۱۴۰۲/۱۱/۲۰</span>
+                                <span>•</span>
+                                <span>۵ دقیقه زمان مطالعه</span>
+                            </div>
+                            <h2 class="post-title text-base sm:text-lg font-bold text-slate-900 group-hover:text-brand-500 transition-colors line-clamp-2 mb-2 leading-snug">
+                                ۱۰ تکنیک طلایی برای یادگیری سریع گرامر زبان انگلیسی
+                            </h2>
+                            <p class="post-summary text-slate-600 text-xs sm:text-sm line-clamp-3 leading-relaxed mb-4">
+                                در این مقاله به بررسی ۱۰ روش کاملاً کاربردی برای تثبیت گرامرهای پیچیده زبان انگلیسی بدون حفظ کردن طوطی‌وار می‌پردازیم.
+                            </p>
+                        </div>
+                        <div class="pt-4 border-t border-slate-100 flex items-center justify-between">
+                            <span class="text-xs font-semibold text-slate-500">نویسنده: استاد بهرادفر</span>
+                            <a href="#" class="inline-flex items-center gap-1 text-xs font-bold text-brand-500 hover:text-brand-400 transition-colors">
+                                بیشتر بخوانید
+                                <svg class="w-4 h-4 rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Post 2 -->
+                <article data-category="speaking" data-aos="fade-up"
+                    class="post-card bg-white rounded-3xl overflow-hidden border border-slate-100 shadow-md hover:shadow-xl transition-all duration-300 flex flex-col group">
+                    <div class="relative h-48 sm:h-52 overflow-hidden bg-slate-100">
+                        <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=600&q=80"
+                            alt="چگونه بدون ترس به زبان انگلیسی مکالمه کنیم؟"
+                            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <span class="absolute top-4 right-4 px-3 py-1 bg-brand-500 text-white text-xs font-bold rounded-lg shadow-md">
+                            مکالمه
+                        </span>
+                    </div>
+                    <div class="p-6 flex flex-col flex-grow justify-between">
+                        <div>
+                            <div class="flex items-center gap-3 text-xs text-slate-400 mb-3">
+                                <span>۱۴۰۲/۱۱/۱۸</span>
+                                <span>•</span>
+                                <span>۷ دقیقه زمان مطالعه</span>
+                            </div>
+                            <h2 class="post-title text-base sm:text-lg font-bold text-slate-900 group-hover:text-brand-500 transition-colors line-clamp-2 mb-2 leading-snug">
+                                چگونه بدون ترس به زبان انگلیسی مکالمه کنیم؟
+                            </h2>
+                            <p class="post-summary text-slate-600 text-xs sm:text-sm line-clamp-3 leading-relaxed mb-4">
+                                غلبه بر استرس هنگام صحبت کردن یکی از بزرگترین چالش‌های زبان‌آموزان است. در این مطلب راهکارهای علمی روانی را مرور می‌کنیم.
+                            </p>
+                        </div>
+                        <div class="pt-4 border-t border-slate-100 flex items-center justify-between">
+                            <span class="text-xs font-semibold text-slate-500">نویسنده: استاد بهرادفر</span>
+                            <a href="#" class="inline-flex items-center gap-1 text-xs font-bold text-brand-500 hover:text-brand-400 transition-colors">
+                                بیشتر بخوانید
+                                <svg class="w-4 h-4 rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Post 3 -->
+                <article data-category="ielts" data-aos="fade-up"
+                    class="post-card bg-white rounded-3xl overflow-hidden border border-slate-100 shadow-md hover:shadow-xl transition-all duration-300 flex flex-col group">
+                    <div class="relative h-48 sm:h-52 overflow-hidden bg-slate-100">
+                        <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=600&q=80"
+                            alt="بررسی جامع بخش Speaking آزمون آیلتس + نمونه سوالات"
+                            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <span class="absolute top-4 right-4 px-3 py-1 bg-brand-500 text-white text-xs font-bold rounded-lg shadow-md">
+                            آیلتس / تافل
+                        </span>
+                    </div>
+                    <div class="p-6 flex flex-col flex-grow justify-between">
+                        <div>
+                            <div class="flex items-center gap-3 text-xs text-slate-400 mb-3">
+                                <span>۱۴۰۲/۱۱/۱۵</span>
+                                <span>•</span>
+                                <span>۱۰ دقیقه زمان مطالعه</span>
+                            </div>
+                            <h2 class="post-title text-base sm:text-lg font-bold text-slate-900 group-hover:text-brand-500 transition-colors line-clamp-2 mb-2 leading-snug">
+                                بررسی جامع بخش Speaking آزمون آیلتس + نمونه سوالات
+                            </h2>
+                            <p class="post-summary text-slate-600 text-xs sm:text-sm line-clamp-3 leading-relaxed mb-4">
+                                تحلیل دقیق سوالات پارت ۱ تا ۳ آزمون شفاهی آیلتس به همراه استراتژی‌های نمره‌دهی ممتحن‌ها.
+                            </p>
+                        </div>
+                        <div class="pt-4 border-t border-slate-100 flex items-center justify-between">
+                            <span class="text-xs font-semibold text-slate-500">نویسنده: استاد بهرادفر</span>
+                            <a href="#" class="inline-flex items-center gap-1 text-xs font-bold text-brand-500 hover:text-brand-400 transition-colors">
+                                بیشتر بخوانید
+                                <svg class="w-4 h-4 rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Post 4 -->
+                <article data-category="podcast" data-aos="fade-up"
+                    class="post-card bg-white rounded-3xl overflow-hidden border border-slate-100 shadow-md hover:shadow-xl transition-all duration-300 flex flex-col group">
+                    <div class="relative h-48 sm:h-52 overflow-hidden bg-slate-100">
+                        <img src="https://images.unsplash.com/photo-1590602847861-f357a9332bbc?w=600&q=80"
+                            alt="پادکست شماره ۱۲: تقویت مهارت شنیداری با اخبارهای روز"
+                            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <span class="absolute top-4 right-4 px-3 py-1 bg-brand-500 text-white text-xs font-bold rounded-lg shadow-md">
+                            پادکست و ویدیو
+                        </span>
+                    </div>
+                    <div class="p-6 flex flex-col flex-grow justify-between">
+                        <div>
+                            <div class="flex items-center gap-3 text-xs text-slate-400 mb-3">
+                                <span>۱۴۰۲/۱۱/۱۰</span>
+                                <span>•</span>
+                                <span>۱۲ دقیقه فایل صوتی</span>
+                            </div>
+                            <h2 class="post-title text-base sm:text-lg font-bold text-slate-900 group-hover:text-brand-500 transition-colors line-clamp-2 mb-2 leading-snug">
+                                پادکست شماره ۱۲: تقویت مهارت شنیداری با اخبارهای روز
+                            </h2>
+                            <p class="post-summary text-slate-600 text-xs sm:text-sm line-clamp-3 leading-relaxed mb-4">
+                                در این فایل صوتی به همراه متندوزبانه، اصطلاحات کاربردی اخبار انگلیسی را با هم تمرین و تحلیل می‌کنیم.
+                            </p>
+                        </div>
+                        <div class="pt-4 border-t border-slate-100 flex items-center justify-between">
+                            <span class="text-xs font-semibold text-slate-500">نویسنده: استاد بهرادفر</span>
+                            <a href="#" class="inline-flex items-center gap-1 text-xs font-bold text-brand-500 hover:text-brand-400 transition-colors">
+                                بیشتر بخوانید
+                                <svg class="w-4 h-4 rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Post 5 -->
+                <article data-category="grammar" data-aos="fade-up"
+                    class="post-card bg-white rounded-3xl overflow-hidden border border-slate-100 shadow-md hover:shadow-xl transition-all duration-300 flex flex-col group">
+                    <div class="relative h-48 sm:h-52 overflow-hidden bg-slate-100">
+                        <img src="https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?w=600&q=80"
+                            alt="تفاوت‌های کلیدی بین Past Simple و Present Perfect"
+                            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <span class="absolute top-4 right-4 px-3 py-1 bg-brand-500 text-white text-xs font-bold rounded-lg shadow-md">
+                            گرامر
+                        </span>
+                    </div>
+                    <div class="p-6 flex flex-col flex-grow justify-between">
+                        <div>
+                            <div class="flex items-center gap-3 text-xs text-slate-400 mb-3">
+                                <span>۱۴۰۲/۱۱/۰۵</span>
+                                <span>•</span>
+                                <span>۴ دقیقه زمان مطالعه</span>
+                            </div>
+                            <h2 class="post-title text-base sm:text-lg font-bold text-slate-900 group-hover:text-brand-500 transition-colors line-clamp-2 mb-2 leading-snug">
+                                تفاوت‌های کلیدی بین Past Simple و Present Perfect
+                            </h2>
+                            <p class="post-summary text-slate-600 text-xs sm:text-sm line-clamp-3 leading-relaxed mb-4">
+                                یکی از پرخطاترین مباحث گرامری برای ایرانیان. تحلیل فرمول‌ها و مثال‌های ملموس روزمره.
+                            </p>
+                        </div>
+                        <div class="pt-4 border-t border-slate-100 flex items-center justify-between">
+                            <span class="text-xs font-semibold text-slate-500">نویسنده: استاد بهرادفر</span>
+                            <a href="#" class="inline-flex items-center gap-1 text-xs font-bold text-brand-500 hover:text-brand-400 transition-colors">
+                                بیشتر بخوانید
+                                <svg class="w-4 h-4 rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Post 6 -->
+                <article data-category="speaking" data-aos="fade-up"
+                    class="post-card bg-white rounded-3xl overflow-hidden border border-slate-100 shadow-md hover:shadow-xl transition-all duration-300 flex flex-col group">
+                    <div class="relative h-48 sm:h-52 overflow-hidden bg-slate-100">
+                        <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=600&q=80"
+                            alt="۵۰ اصطلاح عامیانه و نیتیو (Native Idioms) در مکالمات"
+                            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <span class="absolute top-4 right-4 px-3 py-1 bg-brand-500 text-white text-xs font-bold rounded-lg shadow-md">
+                            مکالمه
+                        </span>
+                    </div>
+                    <div class="p-6 flex flex-col flex-grow justify-between">
+                        <div>
+                            <div class="flex items-center gap-3 text-xs text-slate-400 mb-3">
+                                <span>۱۴۰۲/۱۰/۲۸</span>
+                                <span>•</span>
+                                <span>۸ دقیقه زمان مطالعه</span>
+                            </div>
+                            <h2 class="post-title text-base sm:text-lg font-bold text-slate-900 group-hover:text-brand-500 transition-colors line-clamp-2 mb-2 leading-snug">
+                                ۵۰ اصطلاح عامیانه و نیتیو (Native Idioms) در مکالمات
+                            </h2>
+                            <p class="post-summary text-slate-600 text-xs sm:text-sm line-clamp-3 leading-relaxed mb-4">
+                                اگر می‌خواهید مانند یک نیتیو اسپیکر واقعی صحبت کنید، این ۵۰ اصطلاح ضروری را حتماً یاد بگیرید.
+                            </p>
+                        </div>
+                        <div class="pt-4 border-t border-slate-100 flex items-center justify-between">
+                            <span class="text-xs font-semibold text-slate-500">نویسنده: استاد بهرادفر</span>
+                            <a href="#" class="inline-flex items-center gap-1 text-xs font-bold text-brand-500 hover:text-brand-400 transition-colors">
+                                بیشتر بخوانید
+                                <svg class="w-4 h-4 rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
             </div>
 
             <!-- Empty State -->
@@ -232,177 +444,70 @@
     <!-- Footer -->
     <footer class="bg-slate-900 text-slate-400 py-8 border-t border-slate-800 text-xs text-center">
         <div class="max-w-7xl mx-auto px-4">
-            <p>کلیه حقوق مادی و معنوی این وب‌سایت متعلق به **استاد بهمن بهرادفر** می‌باشد.</p>
+            <p>کلیه حقوق مادی و معنوی این وب‌سایت متعلق به <strong>استاد بهمن بهرادفر</strong> می‌باشد.</p>
         </div>
     </footer>
 
-    <!-- JS Libraries -->
-    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
 
-    <!-- Vanilla JavaScript -->
+    <!-- Filtering & Search Script (DOM-based) -->
     <script>
         AOS.init({ duration: 800, once: true });
-
-        // داده‌های مقالات
-        const posts = [
-            {
-                id: 1,
-                title: '۱۰ تکنیک طلایی برای یادگیری سریع گرامر زبان انگلیسی',
-                summary: 'در این مقاله به بررسی ۱۰ روش کاملاً کاربردی برای تثبیت گرامرهای پیچیده زبان انگلیسی بدون حفظ کردن طوطی‌وار می‌پردازیم.',
-                category: 'grammar',
-                date: '۱۴۰۲/۱۱/۲۰',
-                readTime: '۵ دقیقه',
-                author: 'استاد بهرادفر',
-                image: 'https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=600&q=80'
-            },
-            {
-                id: 2,
-                title: 'چگونه بدون ترس به زبان انگلیسی مکالمه کنیم؟',
-                summary: 'غلبه بر استرس هنگام صحبت کردن یکی از بزرگترین چالش‌های زبان‌آموزان است. در این مطلب راهکارهای علمی روانی را مرور می‌کنیم.',
-                category: 'speaking',
-                date: '۱۴۰۲/۱۱/۱۸',
-                readTime: '۷ دقیقه',
-                author: 'استاد بهرادفر',
-                image: 'https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=600&q=80'
-            },
-            {
-                id: 3,
-                title: 'بررسی جامع بخش Speaking آزمون آیلتس + نمونه سوالات',
-                summary: 'تحلیل دقیق سوالات پارت ۱ تا ۳ آزمون شفاهی آیلتس به همراه استراتژی‌های نمره‌دهی ممتحن‌ها.',
-                category: 'ielts',
-                date: '۱۴۰۲/۱۱/۱۵',
-                readTime: '۱۰ دقیقه',
-                author: 'استاد بهرادفر',
-                image: 'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=600&q=80'
-            },
-            {
-                id: 4,
-                title: 'پادکست شماره ۱۲: تقویت مهارت شنیداری با اخبارهای روز',
-                summary: 'در این فایل صوتی به همراه متندوزبانه، اصطلاحات کاربردی اخبار انگلیسی را با هم تمرین و تحلیل می‌کنیم.',
-                category: 'podcast',
-                date: '۱۴۰۲/۱۱/۱۰',
-                readTime: '۱۲ دقیقه فایل صوتی',
-                author: 'استاد بهرادفر',
-                image: 'https://images.unsplash.com/photo-1590602847861-f357a9332bbc?w=600&q=80'
-            },
-            {
-                id: 5,
-                title: 'تفاوت‌های کلیدی بین Past Simple و Present Perfect',
-                summary: 'یکی از پرخطاترین مباحث گرامری برای ایرانیان. تحلیل فرمول‌ها و مثال‌های ملموس روزمره.',
-                category: 'grammar',
-                date: '۱۴۰۲/۱۱/۰۵',
-                readTime: '۴ دقیقه',
-                author: 'استاد بهرادفر',
-                image: 'https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?w=600&q=80'
-            },
-            {
-                id: 6,
-                title: '۵۰ اصطلاح عامیانه و نیتیو (Native Idioms) در مکالمات',
-                summary: 'اگر می‌خواهید مانند یک نیتیو اسپیکر واقعی صحبت کنید، این ۵۰ اصطلاح ضروری را حتماً یاد بگیرید.',
-                category: 'speaking',
-                date: '۱۴۰۲/۱۰/۲۸',
-                readTime: '۸ دقیقه',
-                author: 'استاد بهرادفر',
-                image: 'https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=600&q=80'
-            }
-        ];
 
         let currentCategory = 'all';
         let searchQuery = '';
 
-        const categoryLabels = {
-            grammar: 'گرامر',
-            speaking: 'مکالمه',
-            ielts: 'آیلتس / تافل',
-            podcast: 'پادکست و ویدیو'
-        };
-
-        const postsGrid = document.getElementById('postsGrid');
         const emptyState = document.getElementById('emptyState');
         const searchInput = document.getElementById('searchInput');
         const filterBtns = document.querySelectorAll('.filter-btn');
+        const postCards = document.querySelectorAll('.post-card');
 
-        // تابع رندر کردن کارت‌های وبلاگ
-        function renderPosts() {
-            const filtered = posts.filter(post => {
-                const matchesCategory = currentCategory === 'all' || post.category === currentCategory;
-                const matchesSearch = post.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
-                    post.summary.toLowerCase().includes(searchQuery.toLowerCase());
-                return matchesCategory && matchesSearch;
+        function filterPosts() {
+            let visibleCount = 0;
+
+            postCards.forEach(card => {
+                const category = card.getAttribute('data-category');
+                const title = card.querySelector('.post-title').textContent.toLowerCase();
+                const summary = card.querySelector('.post-summary').textContent.toLowerCase();
+
+                const matchesCategory = currentCategory === 'all' || category === currentCategory;
+                const matchesSearch = title.includes(searchQuery.toLowerCase()) || summary.includes(searchQuery.toLowerCase());
+
+                if (matchesCategory && matchesSearch) {
+                    card.classList.remove('hidden');
+                    visibleCount++;
+                } else {
+                    card.classList.add('hidden');
+                }
             });
 
-            postsGrid.innerHTML = '';
-
-            if (filtered.length === 0) {
+            if (visibleCount === 0) {
                 emptyState.classList.remove('hidden');
             } else {
                 emptyState.classList.add('hidden');
-                filtered.forEach(post => {
-                    const cardHtml = `
-                        <article 
-                            data-aos="fade-up"
-                            class="bg-white rounded-3xl overflow-hidden border border-slate-100 shadow-md hover:shadow-xl transition-all duration-300 flex flex-col group">
-                            
-                            <div class="relative h-48 sm:h-52 overflow-hidden bg-slate-100">
-                                <img src="${post.image}" alt="${post.title}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-                                <span class="absolute top-4 right-4 px-3 py-1 bg-dark-accent text-white text-xs font-bold rounded-lg shadow-md">
-                                    ${categoryLabels[post.category] || 'عمومی'}
-                                </span>
-                            </div>
-
-                            <div class="p-6 flex flex-col flex-grow justify-between">
-                                <div>
-                                    <div class="flex items-center gap-3 text-xs text-slate-400 mb-3">
-                                        <span>${post.date}</span>
-                                        <span>•</span>
-                                        <span>${post.readTime} زمان مطالعه</span>
-                                    </div>
-                                    <h2 class="text-base sm:text-lg font-bold text-slate-900 group-hover:text-dark-accent transition-colors line-clamp-2 mb-2 leading-snug">${post.title}</h2>
-                                    <p class="text-slate-600 text-xs sm:text-sm line-clamp-3 leading-relaxed mb-4">${post.summary}</p>
-                                </div>
-
-                                <div class="pt-4 border-t border-slate-100 flex items-center justify-between">
-                                    <span class="text-xs font-semibold text-slate-500">نویسنده: ${post.author}</span>
-                                    <a href="#" class="inline-flex items-center gap-1 text-xs font-bold text-dark-accent hover:text-highlight transition-colors">
-                                        بیشتر بخوانید
-                                        <svg class="w-4 h-4 rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
-                                        </svg>
-                                    </a>
-                                </div>
-                            </div>
-                        </article>
-                    `;
-                    postsGrid.insertAdjacentHTML('beforeend', cardHtml);
-                });
-                AOS.refresh();
             }
+
+            AOS.refresh();
         }
 
-        // رویداد لسنر باکس جستجو
         searchInput.addEventListener('input', (e) => {
-            searchQuery = e.target.value;
-            renderPosts();
+            searchQuery = e.target.value.trim();
+            filterPosts();
         });
 
-        // رویداد لسنر دکمه‌های فیلتر دسته‌بندی
         filterBtns.forEach(btn => {
             btn.addEventListener('click', () => {
                 filterBtns.forEach(b => {
-                    b.classList.remove('bg-dark-accent', 'text-white', 'shadow-md', 'shadow-dark-accent/20');
+                    b.classList.remove('bg-brand-500', 'text-white', 'shadow-md', 'shadow-brand-500/20');
                     b.classList.add('bg-white', 'text-slate-600', 'border', 'border-slate-200');
                 });
 
                 btn.classList.remove('bg-white', 'text-slate-600', 'border', 'border-slate-200');
-                btn.classList.add('bg-dark-accent', 'text-white', 'shadow-md', 'shadow-dark-accent/20');
+                btn.classList.add('bg-brand-500', 'text-white', 'shadow-md', 'shadow-brand-500/20');
 
                 currentCategory = btn.getAttribute('data-category');
-                renderPosts();
+                filterPosts();
             });
         });
-
-        // رندر اولیه هنگام بارگذاری
-        renderPosts();
     </script>
 </body>
 

@@ -2,16 +2,85 @@
 
 @theme {
     /* تعریف رنگ‌های برند */
-    --color-brand-100: #f6ae2d;
-    --color-brand-200: #f59c28;
-    --color-brand-300: #f48923;
-    --color-brand-400: #f3771e;
-    --color-brand-500: #f26419;
+    --color-brand-100: #e0f2fe;
+    --color-brand-300: #38bdf8;
+    --color-brand-400: #0284c7;
+    --color-brand-500: #0369a1;
 
     /* تعریف فونت وزیر */
     --font-vazir: Vazirmatn;
 }
-html, body {
+html,
+body {
     max-width: 100% !important;
     overflow-x: hidden !important;
+}
+
+/* Custom Pagination Bullets */
+.swiper-pagination-bullet {
+    width: 12px;
+    height: 12px;
+    background: #cbd5e1;
+    opacity: 1;
+    transition: all 0.3s ease;
+    border-radius: 9999px;
+}
+
+.swiper-pagination-bullet-active {
+    width: 36px;
+    background: linear-gradient(
+        to right,
+        var(--color-brand-300),
+        var(--color-brand-500)
+    );
+    border-radius: 9999px;
+    box-shadow: 0 4px 12px rgba(3, 105, 161, 0.4);
+}
+
+/* Swiper Coverflow Styling Enhancement */
+.hero-swiper .swiper-slide {
+    transition:
+        transform 0.4s ease,
+        opacity 0.4s ease;
+    opacity: 0.5;
+}
+
+.hero-swiper .swiper-slide-active {
+    opacity: 1;
+}
+
+/* SweetAlert Theme Overrides */
+.swal2-popup {
+    font-family: "Vazirmatn" !important;
+    border-radius: 1.25rem !important;
+}
+
+.swal2-styled.swal2-confirm {
+    background-color: var(--color-brand-500) !important;
+    border-radius: 0.75rem !important;
+    box-shadow: 0 4px 14px rgba(3, 105, 161, 0.35) !important;
+    padding: 0.65rem 1.75rem !important;
+    font-weight: 700 !important;
+}
+
+.swal2-styled.swal2-confirm:hover {
+    background-color: var(--color-brand-400) !important;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f5f9;
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--color-brand-300);
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--color-brand-500);
 }

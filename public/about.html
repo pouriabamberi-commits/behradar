@@ -9,7 +9,7 @@
     <!-- Vazirmatn Font CDN -->
     <link href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/Vazirmatn-font-face.css" rel="stylesheet" />
 
-        <!-- FontAwesome Icons CDN -->
+    <!-- FontAwesome Icons CDN -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
         integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -17,14 +17,14 @@
     <!-- Tailwind CSS Output -->
     <link rel="stylesheet" href="./styles/output.css">
 
-    <!-- FontAwesome Icons CDN -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
-
     <!-- AOS (Animate On Scroll) CSS -->
     <link rel="stylesheet" href="./library/aos.css" />
 
     <!-- SweetAlert2 CSS -->
     <link rel="stylesheet" href="./library/sweetalert2.min.css">
+
+    <!-- GSAP CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.min.js" defer></script>
 
     <!-- JS Libraries -->
     <script defer src="./library/cdn.min.js"></script> <!-- Alpine.js -->
@@ -45,24 +45,6 @@
             font-family: 'Vazirmatn', sans-serif !important;
             border-radius: 1.25rem !important;
         }
-
-        ::-webkit-scrollbar {
-            width: 8px;
-        }
-
-        ::-webkit-scrollbar-track {
-            background: #F1F5F9;
-        }
-
-        ::-webkit-scrollbar-thumb {
-            background: #F48923;
-            border-radius: 4px;
-        }
-
-        ::-webkit-scrollbar-thumb:hover {
-            background: #F26419;
-        }
-        
     </style>
 </head>
 
@@ -98,12 +80,12 @@
                 <nav
                     class="hidden md:flex items-center gap-1 lg:gap-1.5 bg-slate-50/80 p-1.5 rounded-2xl border border-slate-100">
                     <a href="index.html"
-                        class="px-4 py-2 rounded-xl text-sm font-bold text-brand-500 bg-white shadow-sm transition-all duration-200"
-                        aria-current="page">
+                        class="px-4 py-2 rounded-xl text-sm font-medium text-slate-600 hover:text-brand-500 hover:bg-white/60 transition-all duration-200">
                         صفحه اصلی
                     </a>
                     <a href="about.html"
-                        class="px-4 py-2 rounded-xl text-sm font-medium text-slate-600 hover:text-brand-500 hover:bg-white/60 transition-all duration-200">
+                        class="px-4 py-2 rounded-xl text-sm font-bold text-brand-500 bg-white shadow-sm transition-all duration-200"
+                        aria-current="page">
                         درباره من
                     </a>
                     <a href="placement-test.html"
@@ -142,13 +124,13 @@
     <div
         class="fixed bottom-0 inset-x-0 z-50 md:hidden w-full bg-white/95 backdrop-blur-lg border-t border-slate-200 shadow-lg px-1 py-1.5">
         <nav class="flex items-center justify-around max-w-md mx-auto">
-            <a href="index.html" class="flex flex-col items-center gap-0.5 text-brand-500">
+            <a href="index.html" class="flex flex-col items-center gap-0.5 text-slate-500 hover:text-brand-500">
                 <i class="fa-solid fa-house text-base"></i>
-                <span class="text-[10px] font-bold">اصلی</span>
+                <span class="text-[10px] font-medium">اصلی</span>
             </a>
-            <a href="about.html" class="flex flex-col items-center gap-0.5 text-slate-500 hover:text-brand-500">
+            <a href="about.html" class="flex flex-col items-center gap-0.5 text-brand-500">
                 <i class="fa-solid fa-user-graduate text-base"></i>
-                <span class="text-[10px] font-medium">درباره من</span>
+                <span class="text-[10px] font-bold">درباره من</span>
             </a>
             <a href="placement-test.html"
                 class="flex flex-col items-center gap-0.5 text-slate-500 hover:text-brand-500">
