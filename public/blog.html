@@ -13,6 +13,9 @@
     <meta property="og:description" content="آموزش‌های تخصصی انگلیسی، گرامر، لغات و تکنیک‌های آیلتس">
     <meta property="og:type" content="website">
 
+    
+    <!-- Tailwind CSS -->
+    <link rel="stylesheet" href="./styles/output.css">
     <!-- Vazirmatn Font -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/vazirmatn@33.0.3/Vazirmatn-font-face.min.css">
 
@@ -34,18 +37,10 @@
         }
     </style>
 
-    <!-- Tailwind CSS -->
-    <link rel="stylesheet" href="./styles/output.css">
 
-    <!-- AOS CSS -->
-    <link rel="stylesheet" href="./library/aos.css" />
-
-    
-    <!-- JS Libraries -->
-    <script defer src="./library/aos.js"></script>
 </head>
 
-<body class="bg-slate-50 text-slate-800 font-sans antialiased min-h-screen flex flex-col justify-between">
+<body class="bg-slate-50 text-slate-800 font-vazir antialiased min-h-screen flex flex-col justify-between">
 
     <!-- HEADER / NAVIGATION -->
     <header
@@ -151,7 +146,7 @@
         <div class="max-w-7xl mx-auto">
 
             <!-- Hero Title -->
-            <div class="text-center mb-8" data-aos="fade-down">
+            <div class="text-center mb-8" >
                 <span
                     class="inline-block px-4 py-1.5 rounded-full bg-brand-100 text-brand-500 text-xs font-bold mb-3">
                     Blog & Articles
@@ -164,7 +159,7 @@
             </div>
 
             <!-- Search & Filter Section -->
-            <div class="max-w-4xl mx-auto mb-10 space-y-6" data-aos="fade-up">
+            <div class="max-w-4xl mx-auto mb-10 space-y-6" >
 
                 <!-- Search Box -->
                 <div class="relative">
@@ -208,7 +203,7 @@
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8" id="postsGrid">
                 
                 <!-- Post 1 -->
-                <article data-category="grammar" data-aos="fade-up"
+                <article data-category="grammar" 
                     class="post-card bg-white rounded-3xl overflow-hidden border border-slate-100 shadow-md hover:shadow-xl transition-all duration-300 flex flex-col group">
                     <div class="relative h-48 sm:h-52 overflow-hidden bg-slate-100">
                         <img src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=600&q=80"
@@ -245,7 +240,7 @@
                 </article>
 
                 <!-- Post 2 -->
-                <article data-category="speaking" data-aos="fade-up"
+                <article data-category="speaking" 
                     class="post-card bg-white rounded-3xl overflow-hidden border border-slate-100 shadow-md hover:shadow-xl transition-all duration-300 flex flex-col group">
                     <div class="relative h-48 sm:h-52 overflow-hidden bg-slate-100">
                         <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=600&q=80"
@@ -282,7 +277,7 @@
                 </article>
 
                 <!-- Post 3 -->
-                <article data-category="ielts" data-aos="fade-up"
+                <article data-category="ielts" 
                     class="post-card bg-white rounded-3xl overflow-hidden border border-slate-100 shadow-md hover:shadow-xl transition-all duration-300 flex flex-col group">
                     <div class="relative h-48 sm:h-52 overflow-hidden bg-slate-100">
                         <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=600&q=80"
@@ -319,7 +314,7 @@
                 </article>
 
                 <!-- Post 4 -->
-                <article data-category="podcast" data-aos="fade-up"
+                <article data-category="podcast" 
                     class="post-card bg-white rounded-3xl overflow-hidden border border-slate-100 shadow-md hover:shadow-xl transition-all duration-300 flex flex-col group">
                     <div class="relative h-48 sm:h-52 overflow-hidden bg-slate-100">
                         <img src="https://images.unsplash.com/photo-1590602847861-f357a9332bbc?w=600&q=80"
@@ -356,7 +351,7 @@
                 </article>
 
                 <!-- Post 5 -->
-                <article data-category="grammar" data-aos="fade-up"
+                <article data-category="grammar"
                     class="post-card bg-white rounded-3xl overflow-hidden border border-slate-100 shadow-md hover:shadow-xl transition-all duration-300 flex flex-col group">
                     <div class="relative h-48 sm:h-52 overflow-hidden bg-slate-100">
                         <img src="https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?w=600&q=80"
@@ -393,7 +388,7 @@
                 </article>
 
                 <!-- Post 6 -->
-                <article data-category="speaking" data-aos="fade-up"
+                <article data-category="speaking" 
                     class="post-card bg-white rounded-3xl overflow-hidden border border-slate-100 shadow-md hover:shadow-xl transition-all duration-300 flex flex-col group">
                     <div class="relative h-48 sm:h-52 overflow-hidden bg-slate-100">
                         <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=600&q=80"
@@ -451,7 +446,7 @@
 
     <!-- Filtering & Search Script (DOM-based) -->
     <script>
-        AOS.init({ duration: 800, once: true });
+
 
         let currentCategory = 'all';
         let searchQuery = '';
@@ -486,7 +481,7 @@
                 emptyState.classList.add('hidden');
             }
 
-            AOS.refresh();
+
         }
 
         searchInput.addEventListener('input', (e) => {
