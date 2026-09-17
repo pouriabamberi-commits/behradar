@@ -64,6 +64,11 @@
   --bs-body-bg: #fff;
 }
 
+@font-face {
+  font-family: 'lalezar';
+  src: url("../../fonts/lalezar.ttf");
+}
+
 *,
 *::before,
 *::after {
@@ -78,7 +83,7 @@
 
 body {
   margin: 0;
-  font-family: var(--bs-body-font-family);
+  font-family: 'lalezar';
   font-size: var(--bs-body-font-size);
   font-weight: var(--bs-body-font-weight);
   line-height: var(--bs-body-line-height);
