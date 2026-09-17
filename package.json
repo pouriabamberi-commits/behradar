@@ -1,9 +1,10 @@
 {
   "dependencies": {
     "@tailwindcss/cli": "^4.3.3",
+    "express": "^4.17.1",
     "tailwindcss": "^4.3.3"
   },
   "scripts": {
-    "run" : "npx @tailwindcss/cli -i ./src/input.css -o ./public/styles/output.css --watch"
+    "run": "npx @tailwindcss/cli -i ./src/input.css -o ./public/styles/output.css --watch"
   }
 }
