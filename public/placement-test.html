@@ -276,102 +276,15 @@
 
         function placementTest() {
             return {
-                step: 1,
-                selectedLevel: null,
-                currentQuestionIndex: 0,
-                userAnswers: {},
-                levels: [
-                    { id: 'A1', title: 'مبتدی (Elementary)' },
-                    { id: 'A2', title: 'پیش‌متوسط (Pre-Intermediate)' },
-                    { id: 'B1', title: 'متوسط (Intermediate)' },
-                    { id: 'B2', title: 'بالاتر از متوسط (Upper-Intermediate)' },
-                    { id: 'C1', title: 'پیشرفته (Advanced)' },
-                    { id: 'C2', title: 'تسلط کامل (Proficiency)' }
-                ],
-                questions: [],
-
-                startTest() {
-                    if (!this.selectedLevel) return;
-
-                    // تولید ۲۰ سوال نمونه بر اساس سطح انتخابی (در سیستم واقعی از API دریافت می‌شود)
-                    this.questions = Array.from({ length: 20 }, (_, i) => ({
-                        id: i + 1,
-                        question: `[Level ${this.selectedLevel}] Sample Question ${i + 1}: Select the correct option to complete the sentence.`,
-                        options: [
-                            `Option A for question ${i + 1}`,
-                            `Option B for question ${i + 1}`,
-                            `Option C for question ${i + 1}`,
-                            `Option D for question ${i + 1}`
-                        ]
-                    }));
-
-                    this.step = 2;
-                },
-
-                nextQuestion() {
-                    if (this.userAnswers[this.questions[this.currentQuestionIndex].id] === undefined) {
-                        Swal.fire({
-                            icon: 'warning',
-                            title: 'پاسخ انتخاب نشده',
-                            text: 'لطفاً قبل از رفتن به سوال بعدی، گزینه مورد نظر خود را انتخاب کنید.',
-                            confirmButtonText: 'متوجه شدم',
-                            confirmButtonColor: '#0369a1'
-                        });
-                        return;
-                    }
-                    if (this.currentQuestionIndex < this.questions.length - 1) {
-                        this.currentQuestionIndex++;
-                    }
-                },
-
-                prevQuestion() {
-                    if (this.currentQuestionIndex > 0) {
-                        this.currentQuestionIndex--;
-                    }
-                },
-
-                submitTest() {
-                    // بررسی پاسخ دادن به تمامی سوالات
-                    if (Object.keys(this.userAnswers).length < this.questions.length) {
-                        Swal.fire({
-                            icon: 'error',
-                            title: 'سوالات ناقص',
-                            text: 'لطفاً به تمامی ۲۰ سوال پاسخ دهید سپس اقدام به ثبت فرم نمایید.',
-                            confirmButtonText: 'تکمیل سوالات',
-                            confirmButtonColor: '#0369a1'
-                        });
-                        return;
-                    }
-
-                    // آماده‌سازی داده‌ها برای ارسال به بک‌اند
-                    const payload = {
-                        level: this.selectedLevel,
-                        answers: this.userAnswers
-                    };
-
-                    Swal.fire({
-                        title: 'در حال ارسال پاسخ‌ها...',
-                        text: 'لطفاً شکیبا باشید، پاسخ‌های شما برای ارزیابی ارسال می‌شود.',
-                        icon: 'info',
-                        showConfirmButton: false,
-                        allowOutsideClick: false,
-                        didOpen: () => {
-                            Swal.showLoading();
-
-                            // شبیه‌سازی ارسال به بک‌اند
-                            setTimeout(() => {
-                                Swal.fire({
-                                    icon: 'success',
-                                    title: 'پاسخ‌ها با موفقیت ثبت شدند!',
-                                    text: 'اطلاعات جهت بررسی صحت پاسخ‌ها به بک‌اند ارسال شد.',
-                                    confirmButtonText: 'تایید',
-                                    confirmButtonColor: '#0369a1'
-                                });
-                                console.log('Data ready for Backend:', payload);
-                            }, 1500);
-                        }
-                    });
-                }
+                step: 1, selectedLevel: null, currentQuestionIndex: 0, userAnswers: {}, levels: [
+                    { id:'A1', title:'مبتدی (Elementary)' }, { id:'A2', title:'پیش‌متوسط (Pre-Intermediate)' }, { id:'B1', title:'متوسط (Intermediate)' },
+                    { id:'B2', title:'بالاتر از متوسط (Upper-Intermediate)' }, { id:'C1', title:'پیشرفته (Advanced)' }, { id:'C2', title:'تسلط کامل (Proficiency)' }
+                ], questions: [], testId: null,
+                init(){ var l=new URLSearchParams(location.search).get('level'); if(l && this.levels.some(x=>x.id===l)) this.selectedLevel=l; },
+                async startTest(){ if(!this.selectedLevel)return; var tests=await fetch('/api/tests').then(r=>r.json()); var t=tests.find(x=>x.level===this.selectedLevel); if(!t){Swal.fire({icon:'error',title:'خطا',text:'آزمون در دسترس نیست.'});return;} var full=await fetch('/api/tests/'+t.id).then(r=>r.json()); this.testId=full.id; this.questions=full.questions; this.userAnswers={}; this.currentQuestionIndex=0; this.step=2; },
+                nextQuestion(){ if(this.userAnswers[this.questions[this.currentQuestionIndex].id]===undefined){Swal.fire({icon:'warning',title:'پاسخ انتخاب نشده',text:'لطفاً گزینه‌ای را انتخاب کنید.',confirmButtonText:'متوجه شدم'});return;} if(this.currentQuestionIndex<this.questions.length-1)this.currentQuestionIndex++; },
+                prevQuestion(){if(this.currentQuestionIndex>0)this.currentQuestionIndex--;},
+                async submitTest(){if(Object.keys(this.userAnswers).length<this.questions.length){Swal.fire({icon:'error',title:'سوالات ناقص',text:'به همه سوالات پاسخ دهید.',confirmButtonText:'تکمیل'});return;} var r=await fetch('/api/tests/'+this.testId+'/submit',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({answers:this.userAnswers})}).then(x=>x.json()); if(!r.success){Swal.fire({icon:'error',title:'خطا',text:r.message||'ثبت نتیجه انجام نشد.'});return;} Swal.fire({icon:'success',title:'نتیجه آزمون',html:'سطح انتخابی: <b>'+r.level+'</b><br>امتیاز: <b>'+r.score+' از '+r.total+'</b>',confirmButtonText:'تایید'});}
             }
         }
     </script>

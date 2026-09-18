@@ -1,10 +1,18 @@
 {
-  "dependencies": {
-    "@tailwindcss/cli": "^4.3.3",
-    "express": "^4.17.1",
-    "tailwindcss": "^4.3.3"
+  "name": "behradar-academy",
+  "version": "1.0.0",
+  "description": "Behradar Academy website with Node.js 13 + SQLite3",
+  "main": "backend/app.js",
+  "engines": {
+    "node": "13.14.0"
   },
   "scripts": {
-    "run": "npx @tailwindcss/cli -i ./src/input.css -o ./public/styles/output.css --watch"
+    "start": "node backend/app.js"
+  },
+  "dependencies": {
+    "express": "4.17.1",
+    "express-session": "1.17.3",
+    "multer": "1.4.5-lts.1",
+    "sqlite3": "5.0.2"
   }
 }

@@ -1,3 +1,6 @@
-node_modules
-package-lock.json
-package.json
+node_modules/
+data/*.sqlite3
+data/*.sqlite3-shm
+data/*.sqlite3-wal
+public/uploads/*
+!public/uploads/.gitkeep

@@ -983,10 +983,32 @@ margin: 0;
 }
 
 
-/* font size */
-.font-size-title-sidbar{
-    font-size: 20px!important;
-}
-.font-size-text-sidbar{
-    font-size: 13px!important;
-}
+
+/* =========================
+   BEHRADAR CONTROL CENTER
+========================= */
+.form-control, .form-select { font-family: inherit; }
+.admin-page-card { background:#fff; border:1px solid #e9eaed; border-radius:12px; padding:22px; }
+.table-responsive { border-radius:12px; }
+.small-muted { color:#888; font-size:11px; }
+.admin-btn-primary { background:#1d232c; color:#fff; border:0; border-radius:8px; padding:10px 15px; font-family:inherit; }
+.admin-btn-primary:hover { background:#303844; color:#fff; }
+.admin-chip { display:inline-flex; align-items:center; gap:5px; padding:5px 9px; border-radius:20px; font-size:10px; background:#f0f1f3; }
+.admin-actions { display:flex; gap:8px; flex-wrap:wrap; }
+.request-card { border:1px solid #e9eaed; border-radius:12px; padding:15px; background:#fff; }
+.request-card + .request-card { margin-top:10px; }
+.message-item { border:1px solid #e9eaed; border-radius:12px; padding:16px; background:#fff; }
+.message-item.unread { border-right:4px solid #1d232c; }
+.file-row { display:flex; align-items:center; justify-content:space-between; gap:12px; padding:14px 0; border-bottom:1px solid #eee; }
+.file-row:last-child { border-bottom:0; }
+body.dark-mode { background:#11161d; color:#e7eaf0; }
+body.dark-mode .admin-navbar, body.dark-mode .admin-page-card, body.dark-mode .stat-card, body.dark-mode .dashboard-card, body.dark-mode .request-card, body.dark-mode .message-item { background:#1b222b; border-color:#303844; color:#e7eaf0; }
+body.dark-mode .navbar-brand, body.dark-mode .page-header h1, body.dark-mode .card-header-custom h5, body.dark-mode .article-table-title strong { color:#fff; }
+body.dark-mode .page-header p, body.dark-mode .small-muted, body.dark-mode .user-info small { color:#aeb5bf; }
+body.dark-mode .admin-table th { background:#202833; color:#aeb5bf; }
+body.dark-mode .admin-table td { color:#dfe4eb; }
+body.dark-mode .form-control, body.dark-mode .form-select { background:#202833; color:#fff; border-color:#3a4552; }
+body.dark-mode .form-control::placeholder { color:#8e98a5; }
+body.dark-mode .admin-btn-primary { background:#fff; color:#151a20; }
+body.dark-mode .file-row { border-color:#303844; }
+@media(max-width:768px){ .admin-page-card{padding:16px;} .file-row{align-items:flex-start; flex-direction:column;} }

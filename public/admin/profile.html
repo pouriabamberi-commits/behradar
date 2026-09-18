@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>پروفایل استاد</title>
+
+    <link rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.rtl.min.css">
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <link rel="stylesheet" href="css/admin.css">
+</head>
+
+<body>
+
+<nav class="navbar admin-navbar">
+    <div class="container-fluid">
+
+        <div>
+            <button class="sidebar-toggle" id="sidebarToggle">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+
+            <a class="navbar-brand" href="dashboard.html">
+                پنل مدیریت
+            </a>
+        </div>
+
+        <div class="admin-user">
+
+            <div class="user-avatar">
+                <i class="fa-solid fa-user"></i>
+            </div>
+
+            <div class="user-info">
+                <strong data-admin-name>استاد</strong>
+                <small>استاد</small>
+            </div>
+
+        </div>
+
+    </div>
+</nav>
+
+
+<div class="admin-layout">
+
+    <!-- Sidebar -->
+    <aside class="sidebar" id="sidebar">
+
+        <div class="sidebar-header">
+
+            <div class="sidebar-logo">
+                <i class="fa-solid fa-graduation-cap"></i>
+            </div>
+
+            <div>
+                <h5>پنل مدیریت</h5>
+                <span>حساب کاربری</span>
+            </div>
+
+        </div>
+
+
+        <div class="sidebar-menu">
+
+            <a href="dashboard.html" class="menu-item">
+                <i class="fa-solid fa-house"></i>
+                داشبورد
+            </a>
+
+            <a href="students.html" class="menu-item">
+                <i class="fa-solid fa-user-graduate"></i>
+                زبان‌آموزان
+            </a>
+
+            <a href="articles.html" class="menu-item">
+                <i class="fa-solid fa-newspaper"></i>
+                مقالات
+            </a>
+
+            <a href="downloads-manage.html" class="menu-item">
+                <i class="fa-solid fa-folder-open"></i>
+                مدیریت فایل‌ها
+            </a>
+
+            <a href="messages.html" class="menu-item">
+                <i class="fa-solid fa-envelope"></i>
+                پیام‌ها
+            </a>
+
+            <a href="profile.html" class="menu-item active">
+                <i class="fa-solid fa-user"></i>
+                پروفایل
+            </a>
+
+            <a href="settings.html" class="menu-item">
+                <i class="fa-solid fa-gear"></i>
+                تنظیمات
+            </a>
+
+            <div class="sidebar-divider"></div>
+
+            <a href="#" data-logout class="menu-item logout">
+                <i class="fa-solid fa-right-from-bracket"></i>
+                خروج
+            </a>
+
+        </div>
+
+    </aside>
+
+
+    <!-- Main -->
+    <main class="main-content" id="mainContent">
+
+        <div class="page-header">
+
+            <h1>پروفایل استاد</h1>
+
+            <p>
+                اطلاعات حساب خود را مشاهده و مدیریت کنید.
+            </p>
+
+        </div>
+
+
+        <div class="row g-4">
+
+            <!-- Profile Card -->
+            <div class="col-lg-5">
+
+                <div class="admin-page-card text-center">
+
+                    <div class="user-avatar mx-auto mb-3"
+                         style="width:80px;height:80px;font-size:28px">
+
+                        <i class="fa-solid fa-user"></i>
+
+                    </div>
+
+                    <h4 id="profileName">در حال بارگذاری...</h4>
+
+                    <p class="text-muted"
+                       id="profilePhone"
+                       dir="ltr">
+                        -
+                    </p>
+
+                    <span class="admin-chip">
+                        استاد
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <!-- Settings -->
+            <div class="col-lg-7">
+
+                <!-- Change Name -->
+                <div class="admin-page-card">
+<h5>
+                        <i class="fa-solid fa-user-pen me-2"></i>
+                        ویرایش نام
+                    </h5>
+
+                    <form id="nameForm" class="mt-3">
+
+                        <input
+                            id="nameInput"
+                            type="text"
+                            class="form-control mb-3"
+                            placeholder="نام و نام خانوادگی"
+                            required
+                        >
+
+                        <button
+                            type="submit"
+                            class="btn btn-dark">
+                            <i class="fa-solid fa-floppy-disk me-1"></i>
+                            ذخیره نام
+                        </button>
+
+                    </form>
+
+                    <div id="nameResult"
+                         class="small mt-2">
+                    </div>
+
+                </div>
+
+
+                <!-- Change Password -->
+                <div class="admin-page-card mt-4">
+
+                    <h5>
+                        <i class="fa-solid fa-lock me-2"></i>
+                        تغییر رمز عبور
+                    </h5>
+
+                    <form id="passForm" class="mt-3">
+
+                        <input
+                            id="currentPassword"
+                            type="password"
+                            class="form-control mb-2"
+                            placeholder="رمز عبور فعلی"
+                            required
+                        >
+
+                        <input
+                            id="newPassword"
+                            type="password"
+                            class="form-control mb-3"
+                            placeholder="رمز عبور جدید"
+                            minlength="3"
+                            required
+                        >
+
+                        <button
+                            type="submit"
+                            class="btn btn-dark">
+                            <i class="fa-solid fa-key me-1"></i>
+                            ذخیره رمز جدید
+                        </button>
+
+                    </form>
+
+                    <div id="passResult"
+                         class="small mt-2">
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </main>
+
+</div>
+
+
+<script src="js/admin.js"></script>
+
+
+<script>
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    const profileName =
+        document.getElementById("profileName");
+
+    const profilePhone =
+        document.getElementById("profilePhone");
+
+    const nameInput =
+        document.getElementById("nameInput");
+
+    const nameForm =
+        document.getElementById("nameForm");
+
+    const nameResult =
+        document.getElementById("nameResult");
+
+    const passForm =
+        document.getElementById("passForm");
+
+    const passResult =
+        document.getElementById("passResult");
+
+
+    /* =========================
+       دریافت پروفایل
+    ========================= */
+
+    async function loadProfile() {
+
+        try {
+
+            const response =
+                await fetch("/api/profile", {
+                    credentials: "same-origin"
+                });
+
+            const data =
+                await response.json();
+
+            if (!response.ok) {
+
+                throw new Error(
+                    data.message || "خطا در دریافت پروفایل"
+                );
+
+            }
+
+
+            profileName.textContent =
+                data.full_name || "استاد";
+
+            profilePhone.textContent =
+                data.phone || "-";
+
+            nameInput.value =
+                data.full_name || "";
+
+
+            /* تغییر نام در هدر داشبورد */
+
+            document
+                .querySelectorAll("[data-admin-name]")
+                .forEach(function (element) {
+
+                    element.textContent =
+                        data.full_name || "استاد";
+
+                });
+
+
+        } catch (error) {
+
+            console.error(error);
+profileName.textContent =
+                "خطا در دریافت اطلاعات";
+
+        }
+
+    }
+
+
+    /* =========================
+       ذخیره نام
+    ========================= */
+
+    nameForm.addEventListener(
+        "submit",
+        async function (event) {
+
+            event.preventDefault();
+
+            const fullName =
+                nameInput.value.trim();
+
+
+            if (!fullName) {
+
+                nameResult.textContent =
+                    "نام را وارد کنید.";
+
+                nameResult.className =
+                    "small mt-2 text-danger";
+
+                return;
+
+            }
+
+
+            try {
+
+                nameResult.textContent =
+                    "در حال ذخیره...";
+
+                nameResult.className =
+                    "small mt-2 text-muted";
+
+
+                const response =
+                    await fetch("/api/profile", {
+
+                        method: "PUT",
+
+                        credentials: "same-origin",
+
+                        headers: {
+                            "Content-Type":
+                                "application/json"
+                        },
+
+                        body: JSON.stringify({
+                            full_name: fullName
+                        })
+
+                    });
+
+
+                const data =
+                    await response.json();
+
+
+                if (!response.ok || !data.success) {
+
+                    throw new Error(
+                        data.message ||
+                        "ذخیره نام انجام نشد."
+                    );
+
+                }
+
+
+                nameResult.textContent =
+                    data.message ||
+                    "نام با موفقیت ذخیره شد.";
+
+                nameResult.className =
+                    "small mt-2 text-success";
+
+
+                await loadProfile();
+
+
+            } catch (error) {
+
+                console.error(error);
+
+                nameResult.textContent =
+                    error.message ||
+                    "خطایی هنگام ذخیره نام رخ داد.";
+
+                nameResult.className =
+                    "small mt-2 text-danger";
+
+            }
+
+        }
+    );
+
+
+    /* =========================
+       تغییر رمز عبور
+    ========================= */
+
+    passForm.addEventListener(
+        "submit",
+        async function (event) {
+
+            event.preventDefault();
+
+
+            const currentPassword =
+                document
+                    .getElementById("currentPassword")
+                    .value;
+
+            const newPassword =
+                document
+                    .getElementById("newPassword")
+                    .value;
+
+
+            if (!currentPassword ||
+                !newPassword) {
+
+                passResult.textContent =
+                    "رمز فعلی و رمز جدید را وارد کنید.";
+
+                passResult.className =
+                    "small mt-2 text-danger";
+
+                return;
+
+            }
+
+
+            if (newPassword.length < 3) {
+
+                passResult.textContent =
+                    "رمز جدید باید حداقل ۳ کاراکتر باشد.";
+
+                passResult.className =
+                    "small mt-2 text-danger";
+
+                return;
+
+            }
+
+
+            try {
+
+                passResult.textContent =
+                    "در حال تغییر رمز...";
+
+                passResult.className =
+                    "small mt-2 text-muted";
+
+
+                const response =
+                    await fetch(
+                        "/api/profile/password",
+                        {
+
+                            method: "PUT",
+
+                            credentials: "same-origin",
+
+                            headers: {
+                                "Content-Type":
+                                    "application/json"
+                            },
+
+                            body: JSON.stringify({
+
+                                current_password:
+                                    currentPassword,
+
+                                new_password:
+                                    newPassword
+})
+
+                        }
+                    );
+
+
+                const data =
+                    await response.json();
+
+
+                if (!response.ok || !data.success) {
+
+                    throw new Error(
+                        data.message ||
+                        "تغییر رمز انجام نشد."
+                    );
+
+                }
+
+
+                passResult.textContent =
+                    data.message ||
+                    "رمز عبور با موفقیت تغییر کرد.";
+
+                passResult.className =
+                    "small mt-2 text-success";
+
+
+                passForm.reset();
+
+
+            } catch (error) {
+
+                console.error(error);
+
+                passResult.textContent =
+                    error.message ||
+                    "خطایی هنگام تغییر رمز رخ داد.";
+
+                passResult.className =
+                    "small mt-2 text-danger";
+
+            }
+
+        }
+    );
+
+
+    /* =========================
+       شروع صفحه
+    ========================= */
+
+    loadProfile();
+
+});
+
+</script>
+
+</body>
+</html>

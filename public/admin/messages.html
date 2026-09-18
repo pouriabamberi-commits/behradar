@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>پیام‌ها و درخواست‌ها</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.rtl.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
+    <link rel="stylesheet" href="css/admin.css" />
+  </head>
+  <body>
+    <nav class="navbar admin-navbar">
+      <div class="container-fluid">
+        <div>
+          <button class="sidebar-toggle" id="sidebarToggle">
+            <i class="fa-solid fa-bars"></i></button
+          ><a class="navbar-brand" href="dashboard.html">پنل مدیریت</a>
+        </div>
+        <div class="admin-user">
+          <div class="user-avatar"><i class="fa-solid fa-user"></i></div>
+          <div class="user-info">
+            <strong data-admin-name>استاد</strong><small>استاد</small>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <div class="admin-layout">
+      <aside class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+          <div class="sidebar-logo">
+            <i class="fa-solid fa-graduation-cap"></i>
+          </div>
+          <div>
+            <h5>پنل مدیریت</h5>
+            <span>ارتباطات</span>
+          </div>
+        </div>
+        <div class="sidebar-menu">
+          <a href="dashboard.html" class="menu-item"
+            ><i class="fa-solid fa-house"></i>داشبورد</a
+          ><a href="students.html" class="menu-item"
+            ><i class="fa-solid fa-user-graduate"></i>زبان‌آموزان</a
+          ><a href="articles.html" class="menu-item"
+            ><i class="fa-solid fa-newspaper"></i>مقالات</a
+          ><a href="downloads-manage.html" class="menu-item"
+            ><i class="fa-solid fa-folder-open"></i>مدیریت فایل‌ها</a
+          ><a href="messages.html" class="menu-item active"
+            ><i class="fa-solid fa-envelope"></i>پیام‌ها</a
+          ><a href="profile.html" class="menu-item"
+            ><i class="fa-solid fa-user"></i>پروفایل</a
+          ><a href="settings.html" class="menu-item"
+            ><i class="fa-solid fa-gear"></i>تنظیمات</a
+          >
+          <div class="sidebar-divider"></div>
+          <a href="#" data-logout class="menu-item logout"
+            ><i class="fa-solid fa-right-from-bracket"></i>خروج</a
+          >
+        </div>
+      </aside>
+      <main class="main-content" id="mainContent">
+        <div class="page-header">
+          <h1>پیام‌ها و درخواست‌های ورود</h1>
+          <p>
+            اساتید می‌توانند برای هم پیام بفرستند و درخواست دسترسی استادهای جدید
+            را بررسی کنند.
+          </p>
+        </div>
+        <div class="row g-4">
+          <div class="col-lg-5">
+            <div class="admin-page-card">
+              <h5 class="mb-3">ارسال پیام به استاد</h5>
+              <form id="messageForm">
+                <select id="receiver" class="form-select mb-2" required></select
+                ><input
+                  id="subject"
+                  class="form-control mb-2"
+                  placeholder="موضوع"
+                /><textarea
+                  id="body"
+                  class="form-control mb-3"
+                  rows="7"
+                  placeholder="متن پیام"
+                  required
+                ></textarea
+                ><button class="btn btn-dark w-100">ارسال پیام</button>
+              </form>
+              <div id="sendResult" class="small mt-2"></div>
+            </div>
+          </div>
+          <div class="col-lg-7">
+            <div class="admin-page-card">
+              <div
+                class="d-flex justify-content-between align-items-center mb-3"
+              >
+                <h5 class="mb-0">درخواست‌های ورود استاد</h5>
+                <span class="small-muted">تایید یا رد</span>
+              </div>
+              <div id="requests"></div>
+            </div>
+            <div class="admin-page-card mt-4">
+              <h5 class="mb-3">پیام‌های دریافتی</h5>
+              <div id="inbox"></div>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+    <script src="js/admin.js"></script>
+    <script src="js/messages.js"></script>
+  </body>
+</html>

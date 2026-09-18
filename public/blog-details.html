@@ -74,7 +74,6 @@
 <body
     class="font-vazir w-full text-slate-800 antialiased selection:bg-brand-100 selection:text-white flex flex-col min-h-screen justify-between"
     x-data="{ mobileMenuOpen: false }">
-
     <!-- HEADER / NAVIGATION -->
     <header
         class="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-slate-100 shadow-sm transition-all duration-300">
@@ -175,7 +174,7 @@
     </div>
 
     <!-- MAIN CONTENT AREA -->
-    <main class="flex-grow py-8 sm:py-12">
+    <div id="legacyArticleRoot"><main class="flex-grow py-8 sm:py-12">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
             <!-- Breadcrumbs -->
@@ -556,6 +555,16 @@
             }
         }
     </script>
+
+<script>
+(function(){
+var p=new URLSearchParams(location.search),id=p.get('id'),title=p.get('title');if(!id&&!title)return;
+var url=id?'/api/articles/'+encodeURIComponent(id):'/api/articles/by-title?title='+encodeURIComponent(title);
+function text(el,v){if(el)el.textContent=v||'';}
+function render(a){var root=document.getElementById('legacyArticleRoot'),article=root.querySelector('article'),children=article.children,header=children[0],imageBox=children[1],content=children[2],bio=children[3];var crumb=root.querySelector('nav span');text(crumb,a.title);var meta=header.querySelectorAll('.flex.flex-wrap.items-center.gap-3 > span');text(meta[0],a.category_label);text(meta[1],new Date(a.created_at).toLocaleDateString('fa-IR'));text(meta[2],a.reading_time+' مطالعه');text(header.querySelector('h1'),a.title);var authorSpans=header.querySelectorAll('.flex.flex-col span');text(authorSpans[0],'نویسنده: '+a.author_name);text(authorSpans[1],a.author_job||'مدرس زبان انگلیسی');var img=imageBox.querySelector('img');img.src=a.image||'./img/avatar16266754.jpg';img.alt=a.title;content.innerHTML='';(a.blocks||[]).forEach(function(b){var el;if(b.block_type==='paragraph'){el=document.createElement('p');el.textContent=b.body;el.className='leading-loose';}else if(b.block_type==='heading'){el=document.createElement('h2');el.className='text-xl sm:text-2xl font-bold text-slate-900 pt-4 flex items-center gap-2';el.innerHTML='<span class="w-2.5 h-7 bg-brand-500 rounded-full inline-block"></span><span></span>';el.querySelector('span:last-child').textContent=b.body;}else if(b.block_type==='highlight'){el=document.createElement('div');el.className='bg-gradient-to-br from-brand-100/50 to-white p-6 rounded-2xl border border-brand-300/30 flex items-start gap-4';el.innerHTML='<div class="w-10 h-10 rounded-xl bg-brand-500 text-white flex items-center justify-center shrink-0 shadow-md"><i class="fa-solid fa-lightbulb text-lg"></i></div><div class="space-y-1"><h3 class="text-sm font-bold text-brand-500"></h3><p class="text-xs sm:text-sm text-slate-600"></p></div>';text(el.querySelector('h3'),b.title||'نکته مهم');text(el.querySelector('p'),b.body);}else if(b.block_type==='list'){el=document.createElement('ol');el.className='list-decimal list-inside space-y-3 pr-2';var items=[];try{items=JSON.parse(b.body)}catch(e){items=[b.body]}items.forEach(function(item){var li=document.createElement('li');li.className='font-bold text-slate-900';li.textContent=item;el.appendChild(li);});}if(el)content.appendChild(el);});if(a.tags&&a.tags.length){var tag=document.createElement('div');tag.className='pt-6 border-t border-slate-100 flex flex-wrap items-center gap-2';var label=document.createElement('span');label.className='text-xs font-bold text-slate-400';label.textContent='برچسب‌ها:';tag.appendChild(label);a.tags.forEach(function(t){var x=document.createElement('a');x.href='#';x.className='px-3 py-1 rounded-lg bg-slate-100 hover:bg-brand-100 hover:text-brand-500 text-xs text-slate-600 transition-colors';x.textContent='#'+t;tag.appendChild(x);});content.appendChild(tag);}text(bio.querySelector('h3'),'درباره نویسنده: '+a.author_name);text(bio.querySelector('p'),(a.author_job||'مدرس زبان انگلیسی')+'. نویسنده و مدرس حوزه آموزش زبان انگلیسی.');}
+fetch(url).then(function(r){if(!r.ok)throw new Error('مقاله پیدا نشد');return r.json();}).then(function(a){render(a);document.title=a.title+' | استاد بهمن بهرادفر';});
+})();
+</script>
 </body>
 
 </html>

@@ -444,66 +444,17 @@
     </footer>
 
 
-    <!-- Filtering & Search Script (DOM-based) -->
-    <script>
-
-
-        let currentCategory = 'all';
-        let searchQuery = '';
-
-        const emptyState = document.getElementById('emptyState');
-        const searchInput = document.getElementById('searchInput');
-        const filterBtns = document.querySelectorAll('.filter-btn');
-        const postCards = document.querySelectorAll('.post-card');
-
-        function filterPosts() {
-            let visibleCount = 0;
-
-            postCards.forEach(card => {
-                const category = card.getAttribute('data-category');
-                const title = card.querySelector('.post-title').textContent.toLowerCase();
-                const summary = card.querySelector('.post-summary').textContent.toLowerCase();
-
-                const matchesCategory = currentCategory === 'all' || category === currentCategory;
-                const matchesSearch = title.includes(searchQuery.toLowerCase()) || summary.includes(searchQuery.toLowerCase());
-
-                if (matchesCategory && matchesSearch) {
-                    card.classList.remove('hidden');
-                    visibleCount++;
-                } else {
-                    card.classList.add('hidden');
-                }
-            });
-
-            if (visibleCount === 0) {
-                emptyState.classList.remove('hidden');
-            } else {
-                emptyState.classList.add('hidden');
-            }
-
-
-        }
-
-        searchInput.addEventListener('input', (e) => {
-            searchQuery = e.target.value.trim();
-            filterPosts();
-        });
-
-        filterBtns.forEach(btn => {
-            btn.addEventListener('click', () => {
-                filterBtns.forEach(b => {
-                    b.classList.remove('bg-brand-500', 'text-white', 'shadow-md', 'shadow-brand-500/20');
-                    b.classList.add('bg-white', 'text-slate-600', 'border', 'border-slate-200');
-                });
-
-                btn.classList.remove('bg-white', 'text-slate-600', 'border', 'border-slate-200');
-                btn.classList.add('bg-brand-500', 'text-white', 'shadow-md', 'shadow-brand-500/20');
-
-                currentCategory = btn.getAttribute('data-category');
-                filterPosts();
-            });
-        });
-    </script>
+<script>
+(function(){
+function esc(v){return String(v||'').replace(/[&<>"']/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c];});}
+function date(v){return new Date(v).toLocaleDateString('fa-IR');}
+function card(a){var e=document.createElement('article');e.dataset.category=(a.category==='conversation'?'speaking':a.category==='listening'?'podcast':a.category==='vocabulary'?'ielts':a.category==='general'?'all':a.category)||'all';e.className='post-card bg-white rounded-3xl overflow-hidden border border-slate-100 shadow-md hover:shadow-xl transition-all duration-300 flex flex-col group';e.innerHTML='<div class="relative h-48 sm:h-52 overflow-hidden bg-slate-100"><img src="'+esc(a.image||'./img/avatar16266754.jpg')+'" alt="'+esc(a.title)+'" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" onerror="this.src=\'./img/avatar16266754.jpg\'"><span class="absolute top-4 right-4 px-3 py-1 bg-brand-500 text-white text-xs font-bold rounded-lg shadow-md">'+esc(a.category_label)+'</span></div><div class="p-6 flex flex-col flex-grow justify-between"><div><div class="flex items-center gap-3 text-xs text-slate-400 mb-3"><span>'+date(a.created_at)+'</span><span>•</span><span>'+esc(a.reading_time)+'</span> زمان مطالعه</div><h2 class="post-title text-base sm:text-lg font-bold text-slate-900 group-hover:text-brand-500 transition-colors line-clamp-2 mb-2 leading-snug">'+esc(a.title)+'</h2><p class="post-summary text-slate-600 text-xs sm:text-sm line-clamp-3 leading-relaxed mb-4">'+esc(a.summary)+'</p></div><div class="pt-4 border-t border-slate-100 flex items-center justify-between"><span class="text-xs font-semibold text-slate-500">نویسنده: '+esc(a.author_name)+'</span><a href="./blog-details.html?id='+a.id+'" class="inline-flex items-center gap-1 text-xs font-bold text-brand-500 hover:text-brand-400 transition-colors">بیشتر بخوانید<svg class="w-4 h-4 rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg></a></div></div>';return e;}
+function filter(){var q=(document.getElementById('searchInput').value||'').toLowerCase(),cat=window.__cat||'all',count=0;document.querySelectorAll('#postsGrid .post-card').forEach(function(c){var t=(c.querySelector('.post-title')?c.querySelector('.post-title').textContent:'').toLowerCase(),x=(c.querySelector('.post-summary')?c.querySelector('.post-summary').textContent:'').toLowerCase(),ok=(cat==='all'||c.dataset.category===cat||c.dataset.category==='all')&&(t.indexOf(q)>=0||x.indexOf(q)>=0);c.classList.toggle('hidden',!ok);if(ok)count++;});document.getElementById('emptyState').classList.toggle('hidden',count!==0);}
+window.__cat='all';
+fetch('/api/articles').then(function(r){return r.json();}).then(function(rows){var grid=document.getElementById('postsGrid');rows.forEach(function(a){grid.insertBefore(card(a),grid.firstChild);});document.querySelectorAll('#postsGrid article a[href="./blog-details.html"]').forEach(function(a){var title=a.closest('article').querySelector('.post-title');if(title)a.href='./blog-details.html?title='+encodeURIComponent(title.textContent.trim());});filter();});
+document.getElementById('searchInput').addEventListener('input',filter);document.querySelectorAll('.filter-btn').forEach(function(b){b.addEventListener('click',function(){window.__cat=b.dataset.category;document.querySelectorAll('.filter-btn').forEach(function(x){x.classList.remove('bg-brand-500','text-white','shadow-md','shadow-brand-500/20');x.classList.add('bg-white','text-slate-600','border','border-slate-200');});b.classList.remove('bg-white','text-slate-600','border','border-slate-200');b.classList.add('bg-brand-500','text-white','shadow-md','shadow-brand-500/20');filter();});});
+})();
+</script>
 </body>
 
 </html>
