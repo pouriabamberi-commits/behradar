@@ -981,3 +981,12 @@ margin: 0;
     }
 
 }
+
+
+/* font size */
+.font-size-title-sidbar{
+    font-size: 20px!important;
+}
+.font-size-text-sidbar{
+    font-size: 13px!important;
+}
